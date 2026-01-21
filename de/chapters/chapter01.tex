@@ -1,23 +1,275 @@
-\chapter{Test}
-
-\setlength{\parindent}{0pt}
-
-\subsection{Motivation und historische Entwicklung}
-\subsection{Die zentrale Rolle des Lichts in Naturwissenschaft und Technik}
+\chapter{Mengen \& Abbildungen}
 
 
+% chapters/01_einfuehrung.tex
+\subsection{Einführung in den Kurs – Analysis}
 
-\subsection{Licht als Erkenntnismittel – Vom Fernrohr zum Teilchenbeschleuniger}
-\phantomsection
-\begin{HistoryBox}[Zitat von Albert Einstein (1909) \cite{einstein1909}]
-	\begin{quote}
-		\emph{"We have two contradictory pictures of reality; separately neither of them fully explains the phenomena of light, but together they do."}
-	\end{quote}
+In diesem Kurs werden die Grundlagen der Analysis~I behandelt, also die Untersuchung von Funktionen einer Variablen.
+Im Mittelpunkt stehen die Begriffe Grenzwerte, Stetigkeit, Differenzierbarkeit, Reihen (insbesondere Potenz- und Taylorreihen),
+Fourieranalyse, vollständige Induktion sowie Integration.
+
+\medskip
+\noindent\textbf{Aufbau des Kurses:} Der Kurs ist in 15 Kapitel gegliedert.
+
+% chapters/02_mengen.tex
+\subsection{Mengen}
+
+Georg Cantor beschrieb 1895 eine Menge wie folgt:
+\begin{quote}
+	Eine Menge ist eine wohldefinierte Zusammenfassung verschiedener Objekte zu einem Ganzen.
+\end{quote}
+
+\subsection*{Beispiele}
+
+\begin{itemize}
+	\item $S:=\{\text{Berlin},\ \text{Hamburg},\ \text{Köln},\ \text{Hannover}\}$
+	\item $\mathbb{R}:=\{x \mid x \text{ ist eine reelle Zahl}\}$ \quad (umgangssprachlich: \glqq alle Kommazahlen\grqq)
+	\item $\sqrt{2}\in\mathbb{R}$, \quad $\{\sqrt{2}\}\subset \mathbb{R}$
+	\item $\emptyset := \{\}\subset \mathbb{R}$
+	\item $\infty \notin \mathbb{R}$
+	\item $\{1,2,7,\mathrm{Berlin}\}\notin \mathbb{R}$
+\end{itemize}
+
+\subsection*{Wichtige Zahlenmengen}
+
+\begin{align*}
+	\mathbb{N} &:= \{0,1,2,3,\ldots\} \\
+	\mathbb{Z} &:= \{\ldots,-2,-1,0,1,2,\ldots\} \\
+	\mathbb{Q} &:= \left\{\frac{p}{q}\ \middle|\ p\in\mathbb{Z},\ q\in\mathbb{N}\setminus\{0\}\right\} \\
+	\mathbb{R} &:= \text{Menge der reellen Zahlen} \\
+	\mathbb{C} &:= \{a+\mathrm{i}b \mid a,b\in\mathbb{R},\ \mathrm{i}^2=-1\}
+\end{align*}
+
+\noindent\textbf{Achtung:} Oft werden die natürlichen Zahlen auch so definiert:
+\begin{align*}
+	\mathbb{N} &:= \{1,2,3,\ldots\}, \\
+	\mathbb{N}_0 &:= \{0,1,2,\ldots\}.
+\end{align*}
+
+\subsection*{Eigenschaft}
+\[
+\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}.
+\]
+
+\subsection*{Mathematische Schreibweisen}
+\begin{itemize}
+	\item $\in$ \quad ist Element von
+	\item $\notin$ \quad ist kein Element von
+	\item $\emptyset$ \quad leere Menge
+	\item $|$ \quad \glqq so dass\grqq{} (z.\,B. in Mengen-Schreibweisen)
+\end{itemize}
+
+\subsection{Intervalle}
+Seien $a,b\in\mathbb{R}$.
+
+\subsubsection*{Abgeschlossenes Intervall}
+\[
+[a,b] := \{x\in\mathbb{R}\mid a\le x \le b\}.
+\]
+
+\begin{center}
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=red] {$[$};
+		\node at (2,0.5) [rotate=0, color=red] {$a$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=red] {$]$};
+		\node at (4,0.5) [rotate=0, color=red] {$b$};
+	\end{tikzpicture}
 	
-	\hfill --- \textbf{Albert Einstein}, \emph{On the Development of Our Views Concerning the Nature and Constitution of Radiation} (1909)
-	\label{box:Einstein1909}
-\end{HistoryBox}
-\subsubsection{Motivation und historische Entwicklung}
-a
-\subsection{Licht als Erkenntnismittel – Vom Fernrohr zum Teilchenbeschleuniger}
-a
+	z.\,B.: $[1,3]$
+	
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=red] {$[$};
+		\node at (2,0.5) [rotate=0, color=red] {$1$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=red] {$]$};
+		\node at (4,0.5) [rotate=0, color=red] {$3$};
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Rechts halboffenes Intervall}
+\[
+[a,b[ := \{x\in\mathbb{R}\mid a\le x < b\}.
+\]
+
+\begin{center}
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=red] {$[$};
+		\node at (2,0.5) [rotate=0, color=red] {$a$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=black] {$[$};
+		\node at (4,0.5) [rotate=0, color=black] {$b$};
+	\end{tikzpicture}
+	
+	$b\notin[a,b[$
+\end{center}
+
+\noindent Analog: links halboffenes Intervall $]a,b]$.
+
+\subsubsection*{Offenes Intervall}
+\[
+]a,b[ := \{x\in\mathbb{R}\mid a< x < b\}.
+\]
+
+\begin{center}
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=black] {$]$};
+		\node at (2,0.5) [rotate=0, color=black] {$a$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=black] {$[$};
+		\node at (4,0.5) [rotate=0, color=black] {$b$};
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Spezielle Teilintervalle}
+Geometrisch entspricht dies einer Teilgeraden der reellen Zahlen:
+\[
+]-\infty,a[ := \{x\in\mathbb{R}\mid x<a\}.
+\]
+
+\begin{center}
+	\begin{tikzpicture}
+		\draw[<->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (0,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=black] {$[$};
+		\node at (4,0.5) [rotate=0, color=black] {$a$};
+	\end{tikzpicture}
+\end{center}
+
+\noindent Alternative Notation:
+\[
+]a,b[=(a,b),\quad [a,b[=[a,b),\quad ]a,b]=(a,b].
+\]
+
+\subsection{Durchschnitt, Vereinigung und Differenzmenge}
+
+\subsubsection*{Durchschnitt}
+\begin{center}
+	\tikzset{
+		schraffiert/.style={pattern=horizontal lines,pattern color=#1},
+		schraffiert/.default=black
+	}
+	\begin{tikzpicture}
+		\def\kreisUeins{(0.5,2) circle [radius=1.5]}
+		\def\kreisUzwei{(1.5,2) circle [radius=1.5]}
+		\begin{scope}
+			\clip\kreisUeins;
+			\draw[schraffiert=green]\kreisUzwei;
+		\end{scope}
+		\draw\kreisUeins;
+		\draw\kreisUzwei;
+		\node[anchor=east] at (-0.3,2) {$A$};
+		\node[anchor=west] at (2.2,2) {$B$};
+	\end{tikzpicture}
+	
+	$A\cap B$
+\end{center}
+
+\noindent Beispiel: Bilde $[1,2]\cap[2,3]$.
+\[
+[1,2]\cap[2,3]=\{2\}.
+\]
+
+\subsubsection*{Vereinigung}
+\begin{center}
+	\tikzset{
+		schraffiert/.style={pattern=horizontal lines,pattern color=#1},
+		schraffiert/.default=black
+	}
+	\begin{tikzpicture}
+		\def\kreisUeins{(0.5,2) circle [radius=1.5]}
+		\def\kreisUzwei{(1.5,2) circle [radius=1.5]}
+		\draw[schraffiert=green]\kreisUzwei;
+		\draw[schraffiert=green]\kreisUeins;
+		\draw\kreisUeins;
+		\draw\kreisUzwei;
+		\node[anchor=east] at (-0.3,2) {$A$};
+		\node[anchor=west] at (2.2,2) {$B$};
+	\end{tikzpicture}
+	
+	$A\cup B$
+\end{center}
+
+\noindent Beispiel:
+\[
+[1,2]\cup[2,3]=[1,3].
+\]
+
+\subsubsection*{Differenzmenge}
+\begin{center}
+	\tikzset{
+		schraffiert/.style={pattern=horizontal lines,pattern color=#1},
+		schraffiert/.default=black
+	}
+	\begin{tikzpicture}
+		\def\kreisUeins{(0.5,2) circle [radius=1.5]}
+		\def\kreisUzwei{(1.5,2) circle [radius=1.5]}
+		\begin{scope}
+			\clip\kreisUeins;
+			\draw[schraffiert=green]\kreisUzwei;
+			\draw[schraffiert=green]\kreisUeins;
+		\end{scope}
+		\draw\kreisUeins;
+		\draw\kreisUzwei;
+		\fill[white] (1.5,2) circle (1.5);
+		\draw (0.5,2) circle (1.5);
+		\node[anchor=east] at (-0.3,2) {$A$};
+		\node[anchor=west] at (2.2,2) {$B$};
+	\end{tikzpicture}
+	
+	$A\setminus B$
+\end{center}
+
+\noindent Beispiel:
+\[
+[1,3]\setminus ]\tfrac{3}{2},\tfrac{5}{2}] = \left[1,\tfrac{3}{2}\right]\cup ]\tfrac{5}{2},3].
+\]
+
+\subsection{Aufgaben zu Mengen}
+
+\subsubsection*{Aufgabe 1}
+Bestimme die Menge
+\[
+\mathbb{M}=\{x\in \mathbb{Z}\mid x \text{ ist durch 3 teilbar}\}\cap \{x\in \mathbb{Z}\mid x \text{ ist durch 4 teilbar}\}.
+\]
+Zahlen, die durch 3 teilbar sind, lassen sich schreiben als $\{3k\mid k\in\mathbb{Z}\}$, und Zahlen, die durch 4 teilbar sind, als $\{4k\mid k\in\mathbb{Z}\}$.
+Damit muss $x$ durch $\mathrm{lcm}(3,4)=12$ teilbar sein:
+\[
+\mathbb{M}=\{12k\mid k\in\mathbb{Z}\}.
+\]
+
+\subsubsection*{Aufgabe 2}
+Bestimme die Menge
+\[
+\mathbb{M}=\bigcup_{m\in \mathbb{N}\setminus\{0\}} \{x\in \mathbb{Q}\mid m\cdot x\in \mathbb{Z}\}.
+\]
+Für festes $m$ gilt:
+\[
+\{x\in\mathbb{Q}\mid m x\in\mathbb{Z}\}=\left\{\frac{k}{m}\mid k\in\mathbb{Z}\right\}.
+\]
+Durch die Vereinigung über alle $m\ge 1$ entstehen genau alle rationalen Zahlen. Also:
+\[
+\mathbb{M}=\mathbb{Q}.
+\]
+
+\subsubsection*{Aufgabe 3}
+Bestimme die Menge
+\[
+\mathbb{M}=\bigcap_{m\in \mathbb{R}}\{x\in\mathbb{R}\mid (x-m)(x-2)(x-3)=0\}.
+\]
+Für festes $m$ ist die Lösungsmenge $\{m,2,3\}$. In der Schnittmenge über alle $m\in\mathbb{R}$ bleiben nur die Elemente übrig, die \emph{für jedes} $m$ dabei sind:
+\[
+\mathbb{M}=\{2,3\}.
+\]
+
+
+
+
+
+
+
+
