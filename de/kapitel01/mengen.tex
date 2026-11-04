@@ -1,0 +1,383 @@
+\section{Mengen }
+
+Georg Kantor hat 1895 eine Menge wie folgt beschrieben:\\
+Eine Menge ist eine wohldefinierte Zusammenfassung verschiedener Objekte zu einem Ganzen.\\
+Beispiele:\\
+
+\begin{tabular}[t]{lll}% l=linksbündig r=rechtsbündig
+	\textbullet& $S:=\{$Berlin, Hamburg, Köln, Hannover$\}$  \\
+	\textbullet &$ \mathbb{R}$:=$\{x|\;x$ ist eine reelle Zahl\}$\quad \overset{\wedge}{=}$  \glqq Alle Kommazahlen\grqq \vspace*{4mm}\\	
+	& $\blacktriangleright\sqrt{2}\in\mathbb{R}, \{\sqrt{(2)}\}\subset \mathbb{R}$\vspace*{4mm}\\
+	& $\blacktriangleright \emptyset:=\{ \}\subset \mathbb{R}$\vspace*{4mm}\\
+	& $ \blacktriangleright\infty\notin\mathbb{R}$\vspace*{4mm}\\
+	& $\blacktriangleright\{1,2,7,\mathrm{Berlin}\}\notin \mathbb{R}\vspace*{4mm}$
+\end{tabular}\vspace*{2mm} \\
+Wichtige Zahlenmengen:\\
+\begin{tabular}[t]{lll@{\textbullet}ll}% l=linksbündig r=rechtsbündig
+	&&&& $\mathbb{N}:=\{0,1,2,3,\ldots\}$ \\
+	&&&& $\mathbb{Z}:=\{\ldots,-2,-1,0,1,2,\ldots\}$\\
+	&&&& $\mathbb{Q}:=\Big\{\frac{p}{q}\, |\, p\in\mathbb{Z}\wedge q\in\mathbb{N}\backslash\{0\}\Big\}$ \\
+	&&&& $\mathbb{C}:=\{a+\mathrm{i}b \, |\; a,b\in\mathbb{R}\; \text{und } \; \mathrm{i}^2=-1\}$	
+\end{tabular}\vspace*{4mm} \\
+Achtung oft werden die natürlichen Zahlen so definiert:\\
+\begin{tabular}[t]{lll@{\textbullet}ll}% l=linksbündig r=rechtsbündig
+	&&&& $\mathbb{N}:=\{1,2,3,\ldots\}$ \\
+	&&&& $\mathbb{N}_0:=\{0,1,2,\ldots\}$\\
+	
+\end{tabular} \vspace*{4mm}\\
+Eigenschaft:\\
+$\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$\\
+Mathematische Schreibweisen:\vspace*{2mm}\\
+$|$ für die gilt\\
+$\notin $ ist kein Element von\\
+$\in$ ist Element von\\
+$\{\}$ leere Menge\\
+
+
+
+\subsection{Intervalle}
+
+\textbf{Intervalle:}\\
+seien $a,b\in\mathbb{R}$\\
+$\blacktriangleright$ Abgeschlossene Intervall\\  
+\begin{quote}
+	$[a,b]\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;a\leq x \leq b\}$\vspace*{4mm}\\
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=red] {$[$};
+		\node at (2,0.5) [rotate=0, color=red] {$a$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=red] {$]$};
+		\node at (4,0.5) [rotate=0, color=red] {$b$};
+	\end{tikzpicture}\\
+	z.B.: $[1,3]$\\
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=red] {$[$};
+		\node at (2,0.5) [rotate=0, color=red] {$1$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=red] {$]$};
+		\node at (4,0.5) [rotate=0, color=red] {$3$};
+	\end{tikzpicture}\\
+\end{quote}
+$\blacktriangleright$ Rechts halboffene Intervall\\ 
+\begin{quote}
+	$[a,b[\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;a\leq x < b\}$\vspace*{4mm}\\
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=red] {$[$};
+		\node at (2,0.5) [rotate=0, color=red] {$a$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=black] {$[$};
+		\node at (4,0.5) [rotate=0, color=black] {$b$};
+	\end{tikzpicture}\\
+	$b\notin[a,b[$\\
+	(analog: das limks soffene Intervall: $\quad  ]a,b]$) \\
+\end{quote}
+$\blacktriangleright$ Offene Intervall\\ 
+\begin{quote}
+	$]a,b[\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;a<x < b\}$\vspace*{4mm}\\
+	\begin{tikzpicture}
+		\node at (2,1) [rotate=0,color=black] {$]$};
+		\node at (2,0.5) [rotate=0, color=black] {$a$};
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (2,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=black] {$[$};
+		\node at (4,0.5) [rotate=0, color=black] {$b$};
+	\end{tikzpicture}\ \\
+\end{quote}
+$\blacktriangleright$ Spezielle Teilintervalle\\
+\begin{quote}
+	Geometrisch gedeutet ist dies eine Teilgerade der reellen Zahlen.\vspace*{4mm}\\ $]-\infty,a[\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;x<a\}$\vspace*{4mm}\\
+	\begin{tikzpicture}
+		
+		
+		\draw[<->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		\draw  (0,1) -- (4,1)[ color=red] ;
+		\node at (4,1) [rotate=0,color=black] {$[$};
+		\node at (4,0.5) [rotate=0, color=black] {$a$};
+	\end{tikzpicture}\ \\
+\end{quote}
+Offene Intervalle werden auch statt: $]a,b[$ auch  so dargestellt: $(a,b)$.\\
+Das rechts halboffene Intervall: $[a,b)$\\
+Das links halboffene Intervall: $(a,b]$\\
+\subsection{Durchschnitt, Vereinigung und Differenzmenge}
+
+\textbf{Durchschnitt, Vereinigung, Differenzmenge}\\
+$\blacktriangleright$ Durchschnitt\\
+\begin{quote}
+	
+	\tikzset{
+		schraffiert/.style={pattern=horizontal lines,pattern color=#1},
+		schraffiert/.default=black
+	}
+	\begin{tikzpicture}
+		\def\kreisUeins{(0.5,2) circle [radius=1.5]}
+		\def\kreisUzwei{(1.5,2) circle [radius=1.5]}
+		\begin{scope} % lokal halten der Wirkung von \clip
+			\clip\kreisUeins;
+			\draw[schraffiert=green]\kreisUzwei;
+		\end{scope}
+		\draw\kreisUeins;
+		\draw\kreisUzwei;
+		\node[anchor=east] at (-0.3,2) {$A$};
+		\node[anchor=west] at (2.2,2) {$B$};
+	\end{tikzpicture}\\
+	
+	$\qquad \quad A\cap B$\\
+	Beispiel:\\
+	Bilde: $[1,2] \cap [2,3]$\\
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (1,1) [rotate=0,color=black] {$[$};
+		\node at (1,0.5) [rotate=0, color=black] {$1$};
+		\node at (2,1) [rotate=0,color=black] {$[$};
+		\node at (2,0.5) [rotate=0, color=black] {$2$};
+		
+		
+	\end{tikzpicture}\ \\
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (2,1) [rotate=0,color=black] {$[$};
+		\node at (2,0.5) [rotate=0, color=black] {$2$};
+		\node at (3,1) [rotate=0,color=black] {$]$};
+		\node at (3,0.5) [rotate=0, color=black] {$3$};
+		
+		
+	\end{tikzpicture}\ \\
+	$[1,2] \cap [2,3]=\{2\}$\\
+\end{quote}
+$\blacktriangleright$ Vereinigung\\
+\begin{quote}
+	
+	\tikzset{
+		schraffiert/.style={pattern=horizontal lines,pattern color=#1},
+		schraffiert/.default=black
+	}
+	
+	\begin{tikzpicture}
+		\def\kreisUeins{(0.5,2) circle [radius=1.5]}
+		\def\kreisUzwei{(1.5,2) circle [radius=1.5]}
+		\begin{scope} % lokal halten der Wirkung von \clip
+			%\clip\kreisUeins;
+			\draw[schraffiert=green]\kreisUzwei;
+			\draw[schraffiert=green]\kreisUeins;
+		\end{scope}
+		\draw\kreisUeins;
+		\draw\kreisUzwei;
+		\node[anchor=east] at (-0.3,2) {$A$};
+		\node[anchor=west] at (2.2,2) {$B$};
+	\end{tikzpicture}\\
+	Beispiel:\\
+	Bilde: $[1,2]\cup [2,3] $\\
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (1,1) [rotate=0,color=black] {$[$};
+		\node at (1,0.5) [rotate=0, color=black] {$1$};
+		\node at (2,1) [rotate=0,color=black] {$]$};
+		\node at (2,0.5) [rotate=0, color=black] {$2$};
+		
+		
+	\end{tikzpicture}\ \\
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (2,1) [rotate=0,color=black] {$[$};
+		\node at (2,0.5) [rotate=0, color=black] {$2$};
+		\node at (3,1) [rotate=0,color=black] {$]$};
+		\node at (3,0.5) [rotate=0, color=black] {$3$};
+		
+		
+	\end{tikzpicture}\ \\
+	$[1,2]\cup [2,3]=[1,3]$\\
+\end{quote}
+\pagebreak
+$\blacktriangleright$ Differenzmenge\\
+\begin{quote}
+	
+	\tikzset{
+		schraffiert/.style={pattern=horizontal lines,pattern color=#1},
+		schraffiert/.default=black
+	}
+	\begin{tikzpicture}
+		\def\kreisUeins{(0.5,2) circle [radius=1.5]}
+		\def\kreisUzwei{(1.5,2) circle [radius=1.5]}
+		\begin{scope} % lokal halten der Wirkung von \clip
+			\clip\kreisUeins;
+			\draw[schraffiert=green]\kreisUzwei;
+			\draw[schraffiert=green]\kreisUeins;
+		\end{scope}
+		\draw\kreisUeins;
+		\draw\kreisUzwei;
+		\fill[white] (1.5,2) circle (1.5);
+		\draw (0.5,2) circle (1.5);
+		\node[anchor=east] at (-0.3,2) {$A$};
+		\node[anchor=west] at (2.2,2) {$B$};
+	\end{tikzpicture}\\
+	Beispiel:\\
+	$[1,3] \; \backslash \;] \frac{3}{2},\frac{5}{2} ]$	\\
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (1,1) [rotate=0,color=black] {$[$};
+		\node at (1,0.5) [rotate=0, color=black] {$1$};
+		\node at (3,1) [rotate=0,color=black] {$]$};
+		\node at (3,0.5) [rotate=0, color=black] {$3$};
+		
+		
+	\end{tikzpicture}\ \\
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (1.5,1) [rotate=0,color=black] {$]$};
+		\node at (1.5,0.5) [rotate=0, color=black] {$\frac{3}{2}$};
+		\node at (2.5,1) [rotate=0,color=black] {$]$};
+		\node at (2.5,0.5) [rotate=0, color=black] {$\frac{5}{2}$};
+		
+		
+	\end{tikzpicture}\ \\
+	$[1,3] \;\backslash \;] \frac{3}{2},\frac{5}{2} ]=[1,\frac{3}{2}] \cup ]\frac{5}{2}, 3]$	\\
+	
+	\begin{tikzpicture}
+		
+		
+		\draw[->] (0,1) -- (6,1) node [below]{$\mathbb{R}$};
+		
+		\node at (1,1) [rotate=0,color=black] {$[$};
+		\node at (1,0.5) [rotate=0, color=black] {$1$};
+		\node at (1.5,1) [rotate=0,color=black] {$]$};
+		\node at (1.5,0.5) [rotate=0, color=black] {$\frac{3}{2}$};
+		\node at (2.5,1) [rotate=0,color=black] {$]$};
+		\node at (2.5,0.5) [rotate=0, color=black] {$\frac{5}{2}$};
+		\node at (3,1) [rotate=0,color=black] {$]$};
+		\node at (3,0.5) [rotate=0, color=black] {$3$};
+	\end{tikzpicture}\ \\	
+\end{quote}
+\subsection{Aufgabe zu Mengen 1}
+
+\textbf{Aufgabe:}\\
+Bestimme die folgende Menge $\mathbb{M}$:\\
+$\mathbb{M}=\{x\in \mathbb{Z}\;|\; \text{$ x $  ist durch 3 teilbar} \}\cap \{x\in \mathbb{Z}\ \;|\;\text{$ x $ ist durch 4 teilbar } \}$\vspace*{2mm}\\
+Für die Menge der Zahlen die durch 3 teilbar sind gilt:\\
+\begin{align*}
+	\{3x\;|\;x\in \mathbb{Z}\}\\
+\end{align*}
+Für die Menge der Zahlen die durch 4 teilbar sind gilt:\\
+\begin{align*}
+	\{4x\;|\;x\in \mathbb{Z}\}\\
+\end{align*}
+Für welche Menge gilt dann, dass $x$ durch 3 und durch 4 teilbar ist?\\
+Das Produkt von 4 und 3 ist immer durch 3 und 4 teilbar. Also gilt:\\
+$\mathbb{M}=\{x\in\mathbb{Z}\; | \; x\;\text{ist durch 3 und 4 teilbar} \}=\{12x\;|\;x\in\mathbb{Z}\}$\vspace*{2mm}\\
+
+
+
+
+\subsection{Aufgabe zu Mengen 2}
+
+\textbf{Aufgabe:}
+
+Bestimme die folgende Menge $\mathbb{M}$:
+
+\begin{align*}
+	\mathbb{M}
+	= \bigcup_{m\in\mathbb{N}\setminus\{0\}}
+	\{x\in\mathbb{Q}\mid m\cdot x\in\mathbb{Z}\}
+\end{align*}
+
+\textbf{Lösung:}
+
+Betrachten wir zunächst den Fall $m=2$:
+
+\begin{align*}
+	M_2=\{x\in\mathbb{Q}\mid 2x\in\mathbb{Z}\}
+\end{align*}
+
+Welche rationalen Zahlen ergeben mit 2 multipliziert
+eine ganze Zahl?
+
+Beispiele:
+
+\begin{align*}
+	\frac{1}{2}\cdot 2 &= 1\\
+	-\frac{1}{2}\cdot 2 &= -1\\
+	\frac{7}{2}\cdot 2 &= 7
+\end{align*}
+
+Damit erhalten wir:
+
+\begin{align*}
+	M_2
+	= \left\{\frac{n}{2}\mid n\in\mathbb{Z}\right\}
+\end{align*}
+
+Für ein beliebiges festes
+$m\in\mathbb{N}\setminus\{0\}$ gilt entsprechend:
+
+\begin{align*}
+	M_m
+	&= \{x\in\mathbb{Q}\mid mx\in\mathbb{Z}\}\\
+	&= \left\{\frac{n}{m}\mid n\in\mathbb{Z}\right\}
+\end{align*}
+
+Vereinigt man diese Mengen über alle positiven
+natürlichen Zahlen $m$, so erhält man sämtliche
+rationalen Zahlen.
+
+Denn jede rationale Zahl lässt sich als Bruch
+$\frac{n}{m}$ mit $n\in\mathbb{Z}$ und
+$m\in\mathbb{N}\setminus\{0\}$ darstellen.
+
+Somit gilt:
+
+\begin{align*}
+	\boxed{
+		\mathbb{M}
+		= \bigcup_{m=1}^{\infty} M_m
+		= \bigcup_{m=1}^{\infty}
+		\left\{\frac{n}{m}\mid n\in\mathbb{Z}\right\}
+		= \mathbb{Q}
+	}
+\end{align*}
+
+
+
+\subsection{Aufgabe zu Mengen 3}
+
+Bestimme die folgende Menge:\\ 
+\begin{align*}
+	\mathbb{M}:\;\overset{\bigcap}{\scriptscriptstyle  m \in \mathbb{R}}\{x\in\mathbb{R}\;|\;(x-m)(x-2)(x-3)=0  \}
+\end{align*}
+Für $m=1$ gilt:\\
+\begin{align*}
+	m=1:\{x\in\mathbb{R}\;|\;(x-1) (x-2) (x-3)=0 \}=\{1,2,3\}
+\end{align*}
+Für $m=\sqrt{2}$ gilt:\\
+\begin{align*}
+	m=\sqrt{2}:\{x\in\mathbb{R}\;|\;(x-\sqrt{2})(x-2)(x-3) \}=\{\sqrt{2},2,3\}
+\end{align*}
+Für m allgemein gilt:\\
+\begin{align*}
+	m:\{x\in\mathbb{R}\;|\;(x-m)(x-2)(x-3) \}=\{m,2,3\}
+\end{align*}
+Die Schnittmenge:\\
+\begin{align*}
+	\mathbb{M}:\;\overset{\bigcap}{\scriptscriptstyle  m \in \mathbb{R}}\{x\in\mathbb{R}\;|\;(x-m)(x-2)(x-3)=0  \}=\{2,3\}
+\end{align*}
+(weil für x=2 und x=3 und für m=2 und m=3 eine Lösung existiert)
+

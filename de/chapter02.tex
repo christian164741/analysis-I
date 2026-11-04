@@ -1,0 +1,590 @@
+\chapter{Vollständige Induktion}
+ \setcounter{section}{2}
+ \setcounter{subsection}{0}
+ \setcounter{subsubsection}{1}
+ \setcounter{secnumdepth}{3}
+
+\subsection{Summen und Produkte}
+
+\href{https://youtu.be/3oxDLe__amI}{Video 04}\\
+\begin{center}
+\fbox{\parbox [t] {90mm} {
+		Seien $n,m \in\mathbb{Z}$ mit $m\leqq n$. Dann definieren wir:\\
+\begin{center}
+\begin{quote}
+$\sum\limits_{k=m}^{n} a_k:=a_m+a_{m+1}+\ldots + a_n$\\
+$\prod\limits_{k=m}^{n} a_k:=a_m\cdot a_{m+1}\cdot\ldots\cdot a_n$
+\end{quote}
+\end{center}
+		}}	
+\end{center}
+$k$ ist der Laufindex\\
+Summenzeichen $\sum$ ist der griechische Buchstabe Sigma.\\
+Produktzeichen $\prod$ ist der griechische Buchstabe Pi.
+
+\begin{center}
+	\fbox{\parbox [t] {70mm} {
+			Seien $n,m \in\mathbb{Z}$ mit $m > n$. Dann gilt:\\
+			\begin{center}
+			
+				$\sum\limits_{k=m}^{n} a_k:=0$\\
+				$\prod\limits_{k=m}^{n} a_k:=1$\\
+		
+		\end{center}
+			
+			
+	}}
+\end{center}
+Beispiel:\\
+\textbullet$\;\;14=2+3+4+5=\sum\limits_{k=1}^{5}k$\\
+\textbullet$\;\;\sum\limits_{k=1}^{0}=0$ (neutrales Element der Addition)\\
+\textbullet$\;\;\prod\limits_{k=7}^{-3}=1$ (neutrales Element der Multiplikation)\vspace*{4mm}\\
+
+
+Definition:\vspace*{2mm}\\
+\begin{center}
+\fbox{\parbox  {70mm} {
+Für $n\in\mathbb{N}$ definiert man: n-Falkultät\\
+\begin{align*}
+n!:=\prod\limits_{k=1}^{n}k=1\cdot 2\cdot 3\cdot \ldots\cdot (n-1)n
+\end{align*}
+}}
+\end{center}
+Beispiel:\\
+$5!=1\cdot 2\cdot 3 \cdot 4 \cdot 5=120$\\
+$1!=1$\\
+$2!=1\cdot2=2$\\
+$3!=1 \cdot 2 \cdot 3=6$\\
+$0!=\prod\limits_{k=1}^{0}k=1$ da $k>0$\\
+\subsubsection{Rechenregeln für Summen und Produkte}
+\href{https://youtu.be/4Gc9NZCThYA}{Video 05}\\
+\begin{center}
+\fbox{\parbox  {90mm} {
+Seien $n,m\in\mathbb{Z}$ mit $m\leq n$ und $j\in\mathbb{N}$, dann gilt:\\
+\begin{align*}
+\sum\limits_{k=m}^{n+j}a_k&=\sum\limits_{k=m}^{n}a_k + \sum\limits_{k=n+1}^{n+j}a_k\\
+\prod\limits_{k=m}^{n+j}a_k&=\prod\limits_{k=m}^{n}a_k \cdot \prod\limits_{k=n+1}^{n+j}a_k
+\end{align*}
+}}
+\end{center}
+Beispiel:\\
+
+$\underbrace{\sum\limits_{k=2}^{5}k}_{2+3+4+5=14}=\sum\limits_{k=2}^{3+2}k=\underbrace{\sum\limits_{k=2}^{3}k}_{2+3=5}+\underbrace{\sum\limits_{k=3+1}^{5}k}_{4+5=9}$\\
+Beispiel:\\
+$n!=\prod\limits_{k=1}^{n}k$\\
+sei $n\in \mathbb{N}$ mit $m\leqq n$ \\
+$n=m+(n-m)$ mit $(n-m)\in \mathbb{N}$\\
+dann gilt:\\
+$n!=\prod\limits_{k=1}^{n}k=\prod\limits_{k=1}^{\scriptscriptstyle m+(n-m)}k=\underbrace{\prod\limits_{k=1}^{m}k}_{m!}\cdot\prod\limits_{\scriptscriptstyle k=m+1}^{\scriptscriptstyle m+(n-m)}k$\\
+$\overset{\div m!}{\Leftrightarrow}\frac{n!}{m!}=\prod\limits_{\scriptscriptstyle k=m+1}^{\scriptscriptstyle m+(n-m)}k=\prod\limits_{\scriptscriptstyle k=m+1}^{n}k=(m+1)\cdot (m+2)\cdot (m+3)\ldots n$\vspace*{2mm}\\
+\begin{center}
+\boxed{
+\frac{n!}{m!}=\prod\limits_{\scriptscriptstyle  k=m+1}^{n}k=(m+1)\cdot (m+2)\cdot (m+3)\cdot\ldots\cdot n
+}
+\end{center}
+\subsubsection{Aufgabe zu Summen und Produkte}
+\href{https://youtu.be/U_S6zGrr5aE}{Video 06}\\
+Berechne folgende Summenen und Produkte.\\
+(i)$\;\;\prod\limits_{n=-3}^{3}=4^n $\\
+(ii)$\;\sum\limits_{k=1}^{3}\bigg(\prod\limits_{j=1}^{k}i\bigg)  $\vspace*{2mm}\\
+\newpage
+\noindent
+zu(i):
+\begin{quote}
+	$\prod\limits_{n=-3}^{3}=4^n $\\
+	$ 4^n=? $\\
+	$ a^b\cdot a^c=a^{b+c} $\\
+	also gilt: $ n=\sum\limits_{n=-3}^{3}n=-3+-2+-1+0+1+2+3=0 $\\
+	$\prod\limits_{n=-3}^{3}=4^n\Leftrightarrow\prod\limits_{n=-3}^{3}=4^{\big(\scriptscriptstyle\sum\limits_{n=-3}^{n}n\big)}\Leftrightarrow\prod\limits_{n=-3}^{3}=4^0=1$  
+\end{quote}
+zu (ii):
+\begin{quote}
+	$ \sum\limits_{k=1}^{3}\bigg(\prod\limits_{j=1}^{k}i\bigg) = \underbrace {\prod\limits_{j=1}^{1}}_{1!}j+\underbrace {\prod\limits_{j=1}^{2}}_{2!}j+\underbrace {\prod\limits_{j=1}^{3}}_{3!}j=1+1\cdot2+1\cdot2\cdot3=1+2+6=9 $
+\end{quote}
+\subsection{Indexverschiebung von Summen und Produkte}
+\href{https://youtu.be/ybpm7LnCzFA}{Video 07}\\
+$ \sum\limits_{k=2}^{3}k=2+3=(5-3) +(6-3)=\sum\limits_{k=5}^{6}(k-3)$\\
+\begin{center}
+\fbox{\parbox  {70mm} {
+	Seien $n,m\in\mathbb{Z}$ mit $ m<n $ und $ j\in\mathbb{N} $\\
+    \begin{align*}
+     \sum\limits_{k=m}^{n}=\sum\limits_{\scriptscriptstyle k=m+j}^{n+j}a_{k-j}\\
+     \prod\limits_{k=m}^{n}=\prod\limits_{\scriptscriptstyle k=m+j}^{n+j}a_{k-j}
+    \end{align*}
+	}}\\
+
+\end{center}
+$ \sum\limits_{k=2}^{k}k=2+3=\sum\limits_{\scriptscriptstyle k=2+3}^{3+3}(k-3)$\vspace*{2mm}\\
+Beispiel:\\
+\textbullet\;\; Indexverschiebung der Summe $ \sum\limits_{k=2}^{n}3^k  $ um $ +7 $.
+\begin{quote}
+	$ \sum\limits_{k=2}^{n}3^k=\sum\limits_{\scriptscriptstyle k=2+7}^{n+7}3^{(k-7)}=\sum\limits_{k=9}^{n+7}3^{(k-7)} $
+\end{quote}
+\textbullet\;\; Indexverschiebung des Produktes $ \prod\limits_{k=5}^k(k-1)^k  $ um $ +5 $.\\
+\begin{quote}
+$ \prod\limits_{k=5}^k(k-1)^k=\prod\limits_{k=10}^{n+5}(k-5)((k-5)-1)^{(k-5)}=\prod\limits_{k=10}^{n+5}(k-5)((k-6)^{(k-5)} $
+\end{quote}
+\subsubsection{Aufgabe I zur Indexverschiebung}
+\href{https://youtu.be/VVGT-QqwNQo}{Video 08}\\
+Berechne:
+$ \sum\limits_{k=1}^{25}(1+k)^2-\sum\limits_{s=4}^{28}=s^2-4s+3  $\\
+Durch Anpassen der Grenzen durch Indexverschiebung kann man die Summen leichter zusammenfassen.\\
+NR.:\\
+\begin{quote}
+	$\sum\limits_{s=4}^{28}=s^2-4s+3  $ Indexverschiebung um -3\\
+	$ \sum\limits_{k=4}^{28}=k^2-4k+3= \sum\limits_{k=1}^{25}=(k+3)^2-4(k+3)+3$\\
+\end{quote}
+\begin{align*}
+\sum\limits_{k=1}^{25}(1+k)^2-\sum\limits_{s=4}^{28}=s^2-4s+3&=\sum\limits_{k=1}^{25}(1+k)^2-((k+3)^2-4(k+3)+3) \\
+&=\sum\limits_{k=1}^{25}(1+k)^2-(k+3)^2+4(k+3)-3\\
+&=\sum\limits_{k=1}^{25}1+2k+k^2-k^2-6k-9+4k+9\\
+&=\sum\limits_{k=1}^{25}1=1+1+1+\ldots = 25\\
+\end{align*}
+\subsubsection{Aufgabe II zur Indexverschiebung}
+\href{https://youtu.be/KC_pReUyVmk}{Video 09}\\
+Schreibe die folgende Summe in der Form:\\
+(i) \;\;$ \sum\limits_{k=1}^{n}a_k $ und
+(ii) $ \sum\limits_{j=6}^{n+5}b_k $
+mit $ -1+3-5+7-9\pm\ldots\mp n $ und $n$ soll ungerade sein.\vspace*{6mm}\\
+zu (i): $\sum\limits_{k=1}^{n}a_k  $\\
+\begin{quote}
+Ein alternierendes Vorzeichen bekommt man mit der Summe:\\
+$\sum\limits_{k=1}^{n}(-1)^k=(-1)^1+(-1)^2+(-1)^3\pm\ldots\mp n=-1+1-1+1\pm\ldots\mp n$\vspace*{2mm}\\
+Ungerade Zahlen bekommt man mit der Summe:\\
+$\sum\limits_{k=1}^{n}2k+1=3+5+7+....+2k+1 $\\
+$\sum\limits_{k=1}^{n}(-1)^k (2k+1)=-3+5-7\pm\ldots\mp 2k+1$\\
+$\text{Es muß mit der Zahl 1 gestartet werden, also erzeugt man die ungerade Zahl mit }2k-1$\\
+$\sum\limits_{k=1}^{n}(-1)^k (2k-1)=-1+3-5\pm\ldots\mp 2k-1$\\
+\begin{align*}
+\sum\limits_{k=1}^{n}a_k=\sum\limits_{k=1}^{n}(-1)^k (2k-1)
+\end{align*}
+\end{quote}
+\newpage
+\noindent
+zu (ii): $ \sum\limits_{j=6}^{n+5}b_k $\\
+\begin{quote}
+Mit Indexverschiebung der Summe $\sum\limits_{k=1}^{n}(-1)^k (2k-1)  $ mit 5, bekommt man:\\
+	\begin{align*}
+     \sum\limits_{k=1+5}^{n+5}(-1)^{k-5} (2(k-5)-1)&=(-1)^k(-1)^{-5}(2k-11)\\&=(-1)^k(-1)(2k-11)\\&=(-1)^{k-1}(2k-11)
+	\end{align*}
+	
+\end{quote}
+\begin{align*}
+\sum\limits_{k=6}^{n+5}b_k=\sum\limits_{k=6}^{n+5}(-1)^{k-1}(2k-11)
+\end{align*}
+\subsection{Vollständige Induktion}
+\href{https://youtu.be/NmdiCukxu14}{Video 10}\\
+Die vollständige Induktion ist eine Beweismethode um Aussagen zu beweisen.\\
+Beweise folgende Aussage: Für alle $ n\in\mathbb{N} $ gilt $ \sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2} $.\\
+Anleitung:\\
+\textbf{(I.A.) Induktionsanfang}\\
+Beweise die Aussage für erstes n:\\
+$ n=0:\sum\limits_{k=1}^{0}k=0=\frac{0(0+1)}{2}_{\Square} $\\
+(Obere Grenze der Summe ist größer als die untere Grenze, deshalb ist die Summe=0)\\
+\textbf{(I.V.) Induktionsvoraussetzung}\\
+für ein $ n\in \mathbb{N} $ gilt:\\
+\begin{align}
+\sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2}
+\end{align}
+\textbf{(I.S.) Induktionsschritt}\\
+Zu zeigen: Dass die Aussage auch für $ n+1 $ gilt. Unter der Annahme , dass (I.V.) gilt beweise wir die Aussage:\\
+\begin{align}
+\sum\limits_{k=1}^{n+1}k=\frac{(n+1)((n+1)+1)}{2}=\frac{n^2+2n+n+2}{2}
+\end{align}
+Betrachte:\\
+\begin{align}
+\sum\limits_{k=1}^{n+1}k=\sum\limits_{k=1}^{n}k+(n+1)&\overset{(I.V.)}{=}\underbrace{\frac{n(n+1)}{2}}_{\text{(II.1)}}+(n+1)\nonumber\\
+&\;\;=\frac{n(n+1)+2(n+1)}{2}\nonumber\\
+&\;\;=\frac{n^2+2n+n+2}{2}\nonumber\\
+\sum\limits_{k=1}^{n+1}k&\;\;=\frac{n^2+2n+n+2}{2}_{\Square}
+\end{align}
+Man hat gezeigt:\\
+Die Aussage (II.2) ist gleich der Betrachtung (II.3) mit Aussnutzung der Induktionsvoraussetzung (II.1).
+\subsubsection{Vollständige Induktion Aufgabe 1}
+\href{https://youtu.be/1QXQojUypy0}{Video 11}\\ 
+Beweise: Für $ n\in\mathbb{N} $ gilt $ \sum\limits_{i=1}^{n}(2i-1)=n^2 $\\
+\textbf{(I.A.)}\\
+$ n=0:\sum\limits_{i=1}^{0}(2i-1)=0=0^2_{\;\Square} $\\
+\textbf{(I.V.)}\\
+Für ein $ n\in\mathbb{N} $ gilt $\sum\limits_{i=1}^{n}(2i-1)=n^2  $\\
+\textbf{(I.S.)}\\
+Z.z.: $ \sum\limits_{i=1}^{n+1}(2i-1) =(n+1)^2=n^2+2n+1$\\
+Dies muß man jetzt beweisen:\\
+Betrachte:\\
+\begin{align*}
+\sum\limits_{i=1}^{n+1}(2i-1)=\underbrace {\sum\limits_{i=1}^{n}(2i-1)}_{I.V.}+(2(n+1)-1)\overset{(I.V.)}{=}n^2+(2(n+1)-1)=n^2+2n+1_{\;\Square}
+\end{align*}
+\subsubsection{Vollständige Induktion Aufgabe 2}
+\href{https://youtu.be/dxWJvKDg0_w}{Video 12}\\ 
+Beweise: Für alle $ n\in \mathbb{N}$ mit $ n \geq 2 $ gilt:$ \prod\limits_{k=2}^{n}\big(1-\frac{1}{k}\big)=\frac{1}{n} $\\
+$ \scriptscriptstyle (k=2 \text{ und } n\geq2 \text{ : Die Zahl 2 ist Zufall!}) $\vspace*{2mm}\\
+\textbf{(I.A.)}\\
+$ n=2:\prod\limits_{k=2}^{2}\big(1-\frac{1}{2}\big)=\frac{1}{2}_{\;\;\Square} $\\
+\textbf{(I.V.)}\\
+Es gilt für ein $ n\in \mathbb{N} $ mit $ n\geq 2 $\\
+\begin{align*}
+\prod\limits_{k=2}^{n}\bigg(1-\frac{1}{k}\bigg)=\frac{1}{n}
+\end{align*}
+\textbf{(I.S.)}\\
+z.Z: $ \prod\limits_{k=2}^{n+1}\big(1-\frac{1}{k}\big)=\frac{1}{n+1} $\\
+\newpage
+\noindent
+Betrachte:\\
+\begin{align*}
+\prod\limits_{k=2}^{n+1}\bigg(1-\frac{1}{k}\bigg)=\underbrace {\prod\limits_{k=2}^{n}\bigg(1-\frac{1}{k}\bigg)}_{(I.V.)}\cdot\bigg(1-\frac{1}{n+1}\bigg) & \overset{(I.V.)}{=}\frac{1}{n}\bigg(1-\frac{1}{n+1}\bigg)\\
+&\;\;=\frac{1}{n} \bigg(\frac{(n+1)-1}{n+1}\bigg)\\
+&\;\;=\frac{1}{n}\bigg(\frac{n}{n+1}\bigg)\\
+\prod\limits_{k=2}^{n+1}\bigg(1-\frac{1}{k}\bigg)&\;\;=\frac{1}{n+1}_{\;\;\Square}\\
+\end{align*}
+\subsubsection{Vollständige Induktion Aufgabe 3}
+\href{https://youtu.be/UPkYsl89msk}{Video 13}\\ 
+Beweise: Für $ n\geq 1 $ gilt $ \sum\limits_{k=1}^{n} (-1)^k\cdot k^2=(-1)^n \frac{n(n+1)}{2}$\vspace*{2mm}\\
+\textbf{I.A.}\\
+Für $n=1$ gilt:
+\begin{align*}
+\sum\limits_{k=1}^{1}(-1)^1\cdot 1^2=-1=(-1)^1\cdot\frac{1(1+1)}{2}_{\;\;\Square}\\
+\end{align*}
+\textbf{I.V.}\\
+Es gilt für ein $ n\in \mathbb{N} $ mit $ n\geq 1 $\\
+\begin{align}
+\sum\limits_{k=1}^{n} (-1)^k\cdot k^2=(-1)^n \frac{n(n+1)}{2}
+\end{align}
+\textbf{I.S.}\\
+Zu zeigen:\\
+\begin{align*}
+\sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2=(-1)^{n+1}\cdot \frac{(n+1)((n+1)+1)}{2}=(-1)^{n+1}\cdot \frac{(n+1)(n+2)}{2}=(-1)^{n+1}\cdot\frac{n^2+3n+2}{2}
+\end{align*}
+\newpage
+\noindent
+Betrachte:\\
+\begin{align*}
+\sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2&=\underbrace {\sum\limits_{k=1}^{n} (-1)^k\cdot k^2}_{\text{(II.4) }}+ (-1)^{n+1}\cdot(n+1)^2\\
+&\overset{(I.V.)}{=}\underbrace {(-1)^n\cdot \frac{n(n+1)}{2}}_{\text{(II.4) }}+(-1)^{n+1} \cdot(n+1)^2\\
+&\;\;=\frac{(-1)^n n(n+1)+2(-1)^{n+1}(n+1)^2 }{2}\\
+&\;\;=\frac{(-1)^n (n^2+n)+2(-1)^{n+1}(n+1)^2 }{2}& |(-1)\cdot(-1) \text{ ergänzen }\\
+&\;\;=\frac{(-1)^n\cdot(-1)\cdot(-1) (n^2+n)+2(-1)^{n+1}(n+1)^2}{2}\\
+&\;\;=\frac{(-1)^{n+1}(-n^2-n)+2(-1)^{n+1}(n+1)^2}{2}\\
+&\;\;=(-1)^{n+1}\cdot\frac{(-n^2-n)+2(n+1)^2}{2}\\
+&\;\;=(-1)^{n+1}\cdot\frac{-n^2-n+2n^2+4n+2}{2}\\
+\sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2&\;\;=(-1)^{n+1}\cdot\frac{n^2+3n+2}{2}_{\;\;\Square}\\
+\end{align*}
+\subsection{Binomischer Lehrsatz und Geometrische Reihe}
+\href{https://youtu.be/aT5my3XaoFo}{Video 14}\\ 
+\textbullet\;\;Binomischer Lehrsatz
+\begin{center}
+ \fbox{\parbox  {66mm} {
+ \begin{center}
+ 	Binominalkoeffizient:\\
+ \end{center}
+ Seien $ n,k \in\mathbb{N} $ und $ k>0 $ dann gilt:\\
+ \begin{align*}
+ &\text{für }n\geq k \\
+ &\binom{n}{k}:=\frac{n!}{k!(n-k)!}\;\;\;\;\in \mathbb{N}\\
+ &\binom{n}{n}:=1\\
+ &\binom{n}{0}:=1\\
+ & \text{für }n<k \\
+ &\binom{n}{k}:=0
+ \end{align*}
+}}
+\end{center}
+\newpage
+\noindent
+Beispiel:\\
+\begin{align*}
+ \binom{3}{2}&=\frac{3!}{2!(3-2)!}=\frac{1\cdot2\cdot3}{1\cdot2(1)}=3 \\
+\binom{5}{3}&=\frac{5!}{3!(5-3)!}=\frac{1\cdot2\cdot3\cdot4\cdot5}{1\cdot2\cdot3\cdot2}=10 \\
+\end{align*}
+
+\begin{center}
+	\fbox{\parbox  {76mm} {
+\begin{center}
+	Binomischer Satz
+\end{center}
+Seien $ a,b\in \mathbb{R} $, dann gilt für alle $ n \in \mathbb{N} $\\
+\begin{align*}
+(a+b)^n=\sum\limits_{k=0}^{n}\binom{n}{k}a^{n-k} \;\;b^k
+\end{align*}	
+}}
+	\
+\end{center}
+Beispiel:\\
+\begin{align*}
+\big(3-\sqrt{2}\big)^2&=\sum\limits_{k=0}^{2}\binom{2}{k}3^{2-k}\;\;\big(-\sqrt{2}\big)^k\\
+              &=\binom{2}{0}3^{2-0}\;\;\big(-\sqrt{2}\big)^0+\binom{2}{1}3^{2-1}\;\;\big(-\sqrt{2}\big)^1+\binom{2}{2}3^{2-2}\;\;\big(-\sqrt{2}\big)^2\\
+              &=1\cdot 9+2\cdot 3\big(-\sqrt{2}\big)+1\cdot 1\cdot 2\\
+              &=9-6\sqrt{2}+2
+\end{align*}
+\textbullet\;\;Geometrische Reihe
+\begin{center}
+	\fbox{\parbox  {80mm} {
+	\begin{center}
+		Geometrische Reihe\vspace*{2mm}\\
+$\sum\limits_{k=0}^{n}x^k =     \left\{ \begin{array}{rcl}
+n+1 & \mbox{für} & x=1\\
+\frac{1-x^{n+1}}{1-x} & \mbox{für} & x\neq  1 \\
+
+\end{array}\right.$	
+\end{center}
+}}
+\end{center}
+Beispiel:\\
+\begin{align*}
+\sum\limits_{k=0}^{3}2^k=\frac{1-2^4}{1-2}=\frac{1-16}{1-2}=15
+\end{align*}
+\newpage
+\subsubsection{Binomischer Satz Aufgabe}
+\href{https://youtu.be/h2Qf1lnF02M}{Video 15}\\ 
+Zeige mit den binomischen Satz, dass $ \big(1+\sqrt{5}\big)^n+\big(1-\sqrt{5}\big)^n \in\mathbb{N} $ ist.\vspace*{4mm} \\
+Für alle $ n \in \mathbb{N} $ gilt:\\
+\begin{align*}
+\text{\textbullet }\;\;\big(1+\sqrt{5}\big)^n&=\sum\limits_{k=0}^{n}\binom{n}{k}1^{n-k}\big(\sqrt{5}\big)^k=\sum\limits_{k=0}^{n}\binom{n}{k}\big(\sqrt{5}\big)^k\\
+\text{\textbullet }\;\;\big(1-\sqrt{5}\big)^n&=\sum\limits_{k=0}^{n}\binom{n}{k}1^{n-k}\big(-\sqrt{5}\big)^k=\sum\limits_{k=0}^{n}\binom{n}{k}\big(-\sqrt{5}\big)^k\\
+\end{align*}
+Damit ist die Aussage äquivalent zu:\\
+\begin{align*}
+&\sum\limits_{k=0}^{n}\binom{n}{k}\big(\sqrt{5}\big)^k+\sum\limits_{k=0}^{n}\binom{n}{k}\big(-\sqrt{5}\big)^k \in \mathbb{N}\\
+&\sum\limits_{k=0}^{n}\binom{n}{k}\bigg(\big(\sqrt{5}\big)^k-\big(-\sqrt{5}\big)^k\bigg)& |\big(-\sqrt{5}\big)^k=\underbrace {-1^k}_{Vorzeichenwechsel}\big(\sqrt{5}\big)^k\\
+&\sum\limits_{k=0}^{n}\binom{n}{k}\bigg(\big(\sqrt{5}\big)^k-\big(-1^k\sqrt{5}\big)^k\bigg)\\
+&\sum\limits_{k=0}^{n}\binom{n}{k}\bigg(\sqrt{5}\big)^k(1+(-1)^k\bigg)\\
+\end{align*}
+Wir zeigen, dass jeder Summant von der Summe aus $\in \mathbb{N} $ ist, dann ist auch die Summe $\in \mathbb{N} $\\
+d.h. $ \binom{n}{k}\big(\sqrt{5}\big)^k(1+(-1)^k) \in \mathbb{N}$ für $ k \in \mathbb{N} $\\
+$ \binom{n}{k}  \in \mathbb{N}$\\$\Rightarrow$ dann müssen noch die einzelnen Faktoren von $ \big(\sqrt{5}\big)^k\big(1+(-1)^k\big) \in \mathbb{N}$ sein.\vspace*{2mm} \\
+\underline{1.Fall (k ist gerade):}\\
+$ k=2p $\\
+\begin{align*}
+&\big(\sqrt{5}\big)^k\Big(1+(-1)^k\Big)\\
+&\big(\sqrt{5}\big)^{2p}\Big(1+(-1)^{2p}\Big)\\
+&\Big(\big(\sqrt{5}\big)^2\Big)^p\Big(1+\big((-1)^2 \big)^p\Big)\\
+&5^p(1+1^p)\\
+&5^p(2)\in \mathbb{N}_{\;\;\Square}
+\end{align*}
+\newpage
+\noindent
+\underline{2.Fall (k ist ungerade):}\\
+$ k=2p+1 $\\
+\begin{align*}
+&\big(\sqrt{5}\big)^k\big(1+(-1)^k\big)\\
+&\big(\sqrt{5}\big)^{2p+1}\Big(1+\big(-1\big)^{2p+1}\Big)\\
+&\big(\sqrt{5}\big)^{2p}\big(\sqrt{5}\big)^1 \big(1+\big(\big(-1\big)^{2p}(-1)^1\big)\\
+&5^p\sqrt{5}(1+(-1))\\
+&5^p\sqrt{5}\cdot 0 \in \mathbb{N}_{\;\;\Square}
+\end{align*}
+\subsection{Absolutbetrag und reelle Lösungen von Gleichungen}
+\href{https://youtu.be/yOVcaRd8siU}{Video 16}\\ 
+Der (Absolut)-Betrag ist die folgende Funktion:\\
+\begin{center}
+$|\cdot|:\mathbb{R}\longmapsto [o,\infty[$\;\;  mit $ |x| =     \left\{ \begin{array}{rcl}
+x & \mbox{für} & x\geq0\\
+-x & \mbox{für} & x< 0 \;\;\;\;\;\;\;\; \text{(II.5) }\\
+
+\end{array}\right.$
+\end{center}
+\begin{center}
+\fbox{\parbox  {60mm} {
+\begin{center}
+Mit den Eigenschaften:\\
+\end{center}
+\begin{align*}
+&|x\cdot y|=|x|\cdot|y|\\
+&\text{\tiny Dreiecksungleichung: }\\
+&|x+y|\leq |x|+|y|
+\end{align*}
+}}
+\end{center}
+Beispiel:\\
+\textbullet\;\;$|-7|=-(-7) =7 $ \tiny{(in Funktion (II.5) einsetzen)}\normalsize \\
+\textbullet \;\;$|7|=7$\\
+\textbullet \;\;$ x<2:|x+2|=-(x+2) $\\
+\href{https://youtu.be/DEDPW_KplM0}{Video 17}\\ 
+Funktion: $ f(x)=|x| $\vspace*{2mm}\\
+\begin{center}
+
+\begin{tikzpicture}
+
+% Gitternetzlinien
+\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
+% x-Achse
+\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$}; 
+%Zahlen auf x-Achse
+\foreach \x in {-3,...,-1}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\foreach \x in {1,...,3}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+% y-Achse 
+\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};%node[above left]
+%Zahlen auf y-Achse
+\foreach \y in {-1,...,-1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\foreach \y in {1,...,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%Ursprung
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+
+\draw[thick,color=black] plot[samples=200, domain=0:4] 
+(\x,{\x}) node[below, xshift=-6em] {$f(x)=|x|$};
+
+\draw[thick,color=black] plot[samples=200, domain=-4:0] 
+(\x,{-\x}) node[below, xshift=1em]{};
+
+
+
+\end{tikzpicture}\vspace*{4mm}\\
+\end{center}
+\newpage
+\noindent
+Löse folgende reelle Gleichung:\\
+\begin{center}
+$ |x+2|-|x-2|=1 $ mit $ x \in \mathbb{R} $
+\end{center}
+Es muß eine Fallunterscheidung durchgeführt werden und zwar da, wo sich die Vorzeichen ändern.\\
+Die Vorzeichen ändern sich bei -2 und +2.\\
+Am Zahlenstrahl hat man dann 3 Fälle.\vspace*{2mm}
+\\
+\begin{tikzpicture}
+%\draw[->,>=stealth] (0,0)--++(-0.5,-0.5)--++(0.5,0)--++(-0.5,-0.5);
+
+\node at (2,0) [red,rotate=0] {$]$};
+\node at (1.8,-0.6) [black,rotate=0] {$-2$};
+\draw [red](0,0) -- (2,0) ;
+\draw [blue](2,0) -- (4,0) ;
+\node at (4,0) [green,rotate=0] {$[$};
+\draw [->,green](4,0) -- (6,0) ;
+\node at (4,-0.6) [black,rotate=0] {$2$};
+\end{tikzpicture}\\
+1.Fall: $ \textcolor{red}{x\leq2} $\\
+2.Fall: $\textcolor{blue}{-2<x<2 } $\\
+3.Fall: $ \textcolor{green}{x\geq 2} $\vspace*{2mm}\\
+\underline{1.Fall:}\\
+Für $x\leq-2  $ gilt:\\
+\begin{align*}
+-(x+2)-(-(x-2))=-x-2+x-2=-4=1_{ \;\;\tikz \draw[->,>=stealth] (0,0)--++(-0.2,-0.2)--++(0.2,0)--++(-0.2,-0.2);}
+\end{align*}
+Für $ x\leq-2 $ gibt es keine Lösung!\vspace*{2mm}\\
+\underline{2.Fall:}\\
+Für $ -2<x<2 $ gilt:\\
+\begin{align*}
+x+2-(-(x-2))=x+2+x-2=2x=1
+\end{align*}
+d.h. $ x=\frac{1}{2} $ ist eine Lösung.\vspace*{2mm}\\
+\underline{3.Fall:}\\
+$ 2\leq x $\\
+\begin{align*}
+x+2-(x-2)=4=1_{ \;\;\tikz \draw[->,>=stealth] (0,0)--++(-0.2,-0.2)--++(0.2,0)--++(-0.2,-0.2);}
+\end{align*}
+Für $ 2\leq x $ gibt es keine Lösung!\\
+\\
+Fazit: Einzige Lösung ist $ x=\frac{1}{2} $.\\
+\subsubsection{Aufgabe 1 zum Thema reelle Lösungen von Gleichungen}
+\href{https://youtu.be/srEv6mDGUBs}{Video 18}\\ 
+Bestimme alle reellen Lösungen dieser Gleichung:\\
+\begin{align*}
+\big||3x|-|-5|\big|=2
+\end{align*}
+Die Gleichung ist äquilalent zu:\\
+\begin{align*}
+\big||3x|-|-5|\big|=2\Leftrightarrow\big||3x|-5\big|=2
+\end{align*}
+\newpage
+\noindent
+\underline{1.Fall:}\\
+$ x\geq 0:\big||3x|-|-5|\big|=|3x-5| $ \\
+\begin{quote}
+	\underline{1.1Fall:}\\
+	$x\geq \frac{5}{3}:|3x-5|=3x-5=2\Leftrightarrow 3x=7\Leftrightarrow x=\frac{7}{3}$\\
+	\underline{1.2Fall:}\\
+	$0<x<\frac{5}{3}:|3x-5|=-(3x-5)=-3x+5=2\Leftrightarrow -3x=-3\Leftrightarrow x=1$\\
+\end{quote}
+\underline{2.Fall:}\\
+$x<0:\big||3x|-5\big|=|-3x-5|=|-1(3x+5)|=|(-1)||3x+5|=|3x+5|=2$\\
+\begin{quote}
+	\underline{2.1Fall:}\\
+	$x<-\frac{5}{3}:|3x+5|=-(3x+5) =-3x-5=2\Leftrightarrow-3x=7\Leftrightarrow x=-\frac{7}{3} $\\
+	\underline{2.2Fall:}\\
+	$0\geq x\geq -\frac{5}{3} : |3x+5|=3x+5=2\Leftrightarrow 3x=-3\Leftrightarrow x=-1 $\\
+\end{quote}
+Fazit: $x_1=\frac{7}{3},\; x_2=1,\; x_3=-\frac{7}{3},\; x_4=-1$ lösen die Gleichung.\\
+
+\subsubsection{Aufgabe 2 zum Thema reelle Lösungen von Gleichungen}
+\href{https://youtu.be/chQF2poVn4U}{Video 19}\\ 
+Bestimme alle reellen Lösungen der folgenden Ungleichung:\\
+\begin{align*}
+x^3+11x<6x^2+6
+\end{align*}
+Zuerst Gleichung umstellen:\
+\begin{align*}
+\Leftrightarrow \underbrace {x^3-6x+11x-6}_{=p(x)=(x-x_1)(x-x_2)(x-x_3)}<0
+\end{align*}
+NR:\\
+Faktorisierung des Polynoms $ p(x) $\\
+Durch hinschauen erhalten wir $ x_1=1 $ eine Nullstelle.\\
+D.h. $ (x-x_1)=(x_1-1) $ teilt $ p(x) $\\
+Mittels Polynomdivision ergibt sich:\\
+\begin{center}
+\begin{tabular}[t]{lll}% l=linksbündig r=rechtsbündig
+	 &\;\;\;$(x^3-6x^2+11x-6)\div (x-1)=x^2-5x+6 $ \\
+	 &$-\underline{(x^3-\;\;x^2)} $  \\
+	 &\hspace{1.1cm}$ -5x^2+11x $\\
+	 &\hspace{0.6cm}$-\underline{(-5x^2+\;\;5x) }$\\
+	 &\hspace{2.8cm}$6x-6 $\\
+	  &\hspace{2.43cm}$\underline{-(6x-6)} $\\
+	   &\hspace{3.8cm}$0$\\
+\end{tabular} \\
+\end{center}
+\newpage
+\noindent
+\href{https://youtu.be/l_JcAzCcKKQ}{Video 20}\\
+$ p(x)=(x^2-5x+6)(x-1) $\\
+Lösung der quatratischen Gleichung $ x^2-5x+6=0$.\\
+\begin{align*}
+x^2-5x+6&=0\\
+x^2-5x+\frac{25}{4}-\frac{25}{4}+\frac{24}{4}&=0\\
+\bigg(x-\frac{5}{2}\bigg)^2-\frac{1}{4}&=0\\
+\bigg(x-\frac{5}{2}\bigg)^2&=\frac{1}{4}\\
+x-\frac{5}{2}&=\pm \sqrt{\frac{1}{4}}\\
+x_{2,3}&=\frac{5}{2}\pm \frac{1}{2}\\
+x_2&=3\\
+x_3&=2
+\end{align*}
+$ p(x)=(x-3)(x-2)(x-1) $\\
+Jetzt kann man die Ungleichung durch die Faktorisierung leicht lösen:\\
+\begin{align*}
+(x-3)(x-2)(x-1)<0
+\end{align*}
+Durch die Nullstellen $ x_1=1, x_2=3, x_3=2 $ bekommt man vier Fälle:\\
+Am Zahlenstrahl hat man dann 4 Fälle.\vspace*{2mm}
+\\
+\begin{tikzpicture}
+%\draw[->,>=stealth] (0,0)--++(-0.5,-0.5)--++(0.5,0)--++(-0.5,-0.5);
+
+\node at (2,0) [red,rotate=0] {$][$};
+\node at (2,-0.6) [black,rotate=0] {$1$};
+\draw [red](0,0) -- (2,0) ;
+\draw [blue](2,0) -- (4,0) ;
+\node at (4,0) [green,rotate=0] {$][$};
+\draw [green](4,0) -- (6,0) ;
+\node at (4,-0.6) [black,rotate=0] {$2$};
+\draw [->,black](6,0) -- (8,0) ;
+\node at (6,-0.6) [black,rotate=0] {$3$};
+\node at (6,0) [black,rotate=0] {$][$};
+\end{tikzpicture}\\
+Bei $ x_1=1, x_2=3, x_3=2 $ wird das Polynom zu Null. Also keine Lösung, da Polynom $ <0 $ werden soll.\\
+Für die 4 Fälle gilt dann:\\
+\begin{center}
+\( \begin{array}{|l|c|c|c|c|}
+\hline       &(x-1)&(x-2)&(x-3)&p(x)\\
+\hline 1.Fall: x<1&-&-&-&-\\
+\hline 2.Fall: 1<x<2&+&-&-&+\\
+\hline 3.Fall: 2<x<3&+&+&-&-\\
+\hline 4.Fall: x>3&+&+&+&+\\
+\hline
+\end{array} \)
+\end{center}
+Fazit:\\
+Bei $ x<1 $ und  $ 2<x<3 $ wird das Polynom negativ. Also ist die Lösung:\\
+\begin{align*}
+x\in \;]-\infty,1[\;\; \cup \;\;]2,3[
+\end{align*}
+
+
+

@@ -1,0 +1,145 @@
+\documentclass[a4paper,11pt]{report}
+
+% Moderne deutsche Sprachunterstuetzung
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% Farben und Mathematik
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{wasysym}
+
+% Grafiken und Diagramme
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{patterns}
+\pgfplotsset{compat=1.18}
+
+% Seitenlayout
+\usepackage{geometry}
+\geometry{
+	left=1cm,
+	right=2cm,
+	top=1cm,
+	bottom=2cm,
+	bindingoffset=2mm
+}
+
+% Links am Ende des Vorspanns
+\usepackage[
+colorlinks=true,
+urlcolor=blue,
+linkcolor=black
+]{hyperref}
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+	
+
+	
+%	\maketitle
+	\setcounter{secnumdepth}{3}
+	\setcounter{tocdepth}{3}
+	
+	
+	
+	%	\maketitle
+	\clearpage
+	\thispagestyle{empty}
+	
+	\vspace*{\fill}
+	
+\begin{center}
+	
+	{\fontsize{24}{29}\selectfont
+		\textbf{Analysis I}}\\[0.8em]
+	
+	{\fontsize{16}{20}\selectfont
+		Grundlagen, Methoden und Anwendungen}\\[2em]
+	
+	{\fontsize{14}{18}\selectfont
+		Dipl.-Ing.\,(FH) Christian Weilharter}\\[2em]
+	
+	\textcopyright~2025, Christian Weilharter, Traunstein\\[2em]
+		
+		%\begin{flushleft}
+		\begin{tabular}{@{}l l}
+			
+			
+			%	\textbf{ISBN: (Print)} & 978-3-912302-00-4 \\[0.5em]
+			\textbf{ISBN: (E-Book)} & 978-3-912302-20-2 \\[0.5em]
+			\textbf{Auflage:} & 1.~Auflage 2027 \\[0.5em]
+			\textbf{Satz:} & \LaTeX \\[0.5em]
+			\textbf{Verlag:} & Christian Weilharter \\[0.5em]
+			%	\textbf{Druck:} & Amazon KDP (Print-on-Demand) \\[0.5em]
+			
+			\textbf{E-Book-Ausgabe:} & Zenodo\\[0.5em]
+			%	&Amazon Kindle Direct Publishing \\[0.5em]
+			\textbf{Kontakt:} & \href{mailto:info@mathandphysics.de}{info@mathandphysics.de}\\[0.5em]
+			\textbf{Web:} & \href{https://www.mathandphysics.de}{www.mathandphysics.de}\\
+			
+			
+		\end{tabular}
+		%	\end{flushleft}
+		\end{center}
+		
+		
+		\vspace*{\fill}
+		
+		\clearpage
+	
+	
+	
+	% Vorwort
+	\chapter*{Vorwort}
+	\addcontentsline{toc}{chapter}{Vorwort}
+
+	
+	Dieses Skript entstand ursprünglich im Jahr 2020 als persönliche Ausarbeitung zu den damals verfügbaren Lernvideos von OnlineTutorium.com im Bereich Analysis I. Ziel war es, die dort behandelten mathematischen Inhalte in kompakter Form zusammenzufassen und durch eigene Rechnungen und Notizen nachvollziehbar zu machen.
+	
+	Die ursprünglichen Videos dienten dabei als didaktische Grundlage und Orientierung für die Reihenfolge einzelner Themen. Das vorliegende Skript wurde seitdem überarbeitet, ergänzt und in eine eigenständige Fassung überführt. Erklärungen, mathematische Darstellungen und Beispiele wurden teilweise neu formuliert, erweitert oder ersetzt.
+	
+	Im Mittelpunkt steht nicht eine möglichst umfassende Darstellung der Analysis, sondern ein verständlicher und rechnerisch orientierter Zugang zu ihren grundlegenden Methoden. Definitionen und Sätze werden daher möglichst direkt mit Herleitungen und Beispielen verbunden.
+	
+	Das Skript erhebt keinen Anspruch, ein vollständiges Lehrbuch zu ersetzen. Es soll vielmehr eine kompakte Begleitung zum Studium und eine Möglichkeit zur Wiederholung zentraler Inhalte der Analysis I bieten.
+	
+	Mein Dank gilt den damaligen Autoren und Dozenten von OnlineTutorium.com für die verständliche Vermittlung der mathematischen Grundlagen und die Anregung zur ursprünglichen Erstellung dieses Skripts.
+	
+	Christian Weilharter
+	November 2026
+
+	
+	
+	
+	\clearpage
+	
+	% Inhaltsverzeichnis
+	
+	
+	\tableofcontents
+	\hyphenation{exis-tiert}
+	
+	% Die 15 Originaldateien muessen neben dieser Hauptdatei liegen.
+	\include{chapter01}
+%	\include{chapter02}
+%\include{chapter03}
+%	\include{chapter04}
+%	\include{chapter05}
+%	\include{chapter06}
+%	\include{chapter07}
+	%\include{chapter08}
+%	\include{chapter09}
+%	\include{chapter10}
+%	\include{chapter11}
+%	\include{chapter12}
+%	\include{chapter13}
+%	\include{chapter14}
+%	\include{chapter15}
+\end{document}
