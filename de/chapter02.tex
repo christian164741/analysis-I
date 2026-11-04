@@ -1,12 +1,9 @@
-\chapter{Vollständige Induktion}
- \setcounter{section}{2}
- \setcounter{subsection}{0}
- \setcounter{subsubsection}{1}
- \setcounter{secnumdepth}{3}
+\chapter{Algebraische Grundlagen und Vollständige Induktion}
+ 
 
-\subsection{Summen und Produkte}
+\section{Summen und Produkte}
 
-\href{https://youtu.be/3oxDLe__amI}{Video 04}\\
+
 \begin{center}
 \fbox{\parbox [t] {90mm} {
 		Seien $n,m \in\mathbb{Z}$ mit $m\leqq n$. Dann definieren wir:\\
@@ -56,8 +53,8 @@ $1!=1$\\
 $2!=1\cdot2=2$\\
 $3!=1 \cdot 2 \cdot 3=6$\\
 $0!=\prod\limits_{k=1}^{0}k=1$ da $k>0$\\
-\subsubsection{Rechenregeln für Summen und Produkte}
-\href{https://youtu.be/4Gc9NZCThYA}{Video 05}\\
+\subsection{Rechenregeln für Summen und Produkte}
+
 \begin{center}
 \fbox{\parbox  {90mm} {
 Seien $n,m\in\mathbb{Z}$ mit $m\leq n$ und $j\in\mathbb{N}$, dann gilt:\\
@@ -82,8 +79,8 @@ $\overset{\div m!}{\Leftrightarrow}\frac{n!}{m!}=\prod\limits_{\scriptscriptstyl
 \frac{n!}{m!}=\prod\limits_{\scriptscriptstyle  k=m+1}^{n}k=(m+1)\cdot (m+2)\cdot (m+3)\cdot\ldots\cdot n
 }
 \end{center}
-\subsubsection{Aufgabe zu Summen und Produkte}
-\href{https://youtu.be/U_S6zGrr5aE}{Video 06}\\
+\subsection{Aufgabe zu Summen und Produkte}
+
 Berechne folgende Summenen und Produkte.\\
 (i)$\;\;\prod\limits_{n=-3}^{3}=4^n $\\
 (ii)$\;\sum\limits_{k=1}^{3}\bigg(\prod\limits_{j=1}^{k}i\bigg)  $\vspace*{2mm}\\
@@ -102,7 +99,7 @@ zu (ii):
 	$ \sum\limits_{k=1}^{3}\bigg(\prod\limits_{j=1}^{k}i\bigg) = \underbrace {\prod\limits_{j=1}^{1}}_{1!}j+\underbrace {\prod\limits_{j=1}^{2}}_{2!}j+\underbrace {\prod\limits_{j=1}^{3}}_{3!}j=1+1\cdot2+1\cdot2\cdot3=1+2+6=9 $
 \end{quote}
 \subsection{Indexverschiebung von Summen und Produkte}
-\href{https://youtu.be/ybpm7LnCzFA}{Video 07}\\
+
 $ \sum\limits_{k=2}^{3}k=2+3=(5-3) +(6-3)=\sum\limits_{k=5}^{6}(k-3)$\\
 \begin{center}
 \fbox{\parbox  {70mm} {
@@ -124,8 +121,8 @@ Beispiel:\\
 \begin{quote}
 $ \prod\limits_{k=5}^k(k-1)^k=\prod\limits_{k=10}^{n+5}(k-5)((k-5)-1)^{(k-5)}=\prod\limits_{k=10}^{n+5}(k-5)((k-6)^{(k-5)} $
 \end{quote}
-\subsubsection{Aufgabe I zur Indexverschiebung}
-\href{https://youtu.be/VVGT-QqwNQo}{Video 08}\\
+\subsection{Aufgabe I zur Indexverschiebung}
+
 Berechne:
 $ \sum\limits_{k=1}^{25}(1+k)^2-\sum\limits_{s=4}^{28}=s^2-4s+3  $\\
 Durch Anpassen der Grenzen durch Indexverschiebung kann man die Summen leichter zusammenfassen.\\
@@ -140,8 +137,8 @@ NR.:\\
 &=\sum\limits_{k=1}^{25}1+2k+k^2-k^2-6k-9+4k+9\\
 &=\sum\limits_{k=1}^{25}1=1+1+1+\ldots = 25\\
 \end{align*}
-\subsubsection{Aufgabe II zur Indexverschiebung}
-\href{https://youtu.be/KC_pReUyVmk}{Video 09}\\
+\subsection{Aufgabe II zur Indexverschiebung}
+
 Schreibe die folgende Summe in der Form:\\
 (i) \;\;$ \sum\limits_{k=1}^{n}a_k $ und
 (ii) $ \sum\limits_{j=6}^{n+5}b_k $
@@ -172,8 +169,12 @@ Mit Indexverschiebung der Summe $\sum\limits_{k=1}^{n}(-1)^k (2k-1)  $ mit 5, be
 \begin{align*}
 \sum\limits_{k=6}^{n+5}b_k=\sum\limits_{k=6}^{n+5}(-1)^{k-1}(2k-11)
 \end{align*}
-\subsection{Vollständige Induktion}
-\href{https://youtu.be/NmdiCukxu14}{Video 10}\\
+
+
+
+
+\section{Vollständige Induktion}
+
 Die vollständige Induktion ist eine Beweismethode um Aussagen zu beweisen.\\
 Beweise folgende Aussage: Für alle $ n\in\mathbb{N} $ gilt $ \sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2} $.\\
 Anleitung:\\
@@ -200,8 +201,8 @@ Betrachte:\\
 \end{align}
 Man hat gezeigt:\\
 Die Aussage (II.2) ist gleich der Betrachtung (II.3) mit Aussnutzung der Induktionsvoraussetzung (II.1).
-\subsubsection{Vollständige Induktion Aufgabe 1}
-\href{https://youtu.be/1QXQojUypy0}{Video 11}\\ 
+\subsection{Vollständige Induktion Aufgabe 1}
+
 Beweise: Für $ n\in\mathbb{N} $ gilt $ \sum\limits_{i=1}^{n}(2i-1)=n^2 $\\
 \textbf{(I.A.)}\\
 $ n=0:\sum\limits_{i=1}^{0}(2i-1)=0=0^2_{\;\Square} $\\
@@ -214,8 +215,8 @@ Betrachte:\\
 \begin{align*}
 \sum\limits_{i=1}^{n+1}(2i-1)=\underbrace {\sum\limits_{i=1}^{n}(2i-1)}_{I.V.}+(2(n+1)-1)\overset{(I.V.)}{=}n^2+(2(n+1)-1)=n^2+2n+1_{\;\Square}
 \end{align*}
-\subsubsection{Vollständige Induktion Aufgabe 2}
-\href{https://youtu.be/dxWJvKDg0_w}{Video 12}\\ 
+\subsection{Vollständige Induktion Aufgabe 2}
+
 Beweise: Für alle $ n\in \mathbb{N}$ mit $ n \geq 2 $ gilt:$ \prod\limits_{k=2}^{n}\big(1-\frac{1}{k}\big)=\frac{1}{n} $\\
 $ \scriptscriptstyle (k=2 \text{ und } n\geq2 \text{ : Die Zahl 2 ist Zufall!}) $\vspace*{2mm}\\
 \textbf{(I.A.)}\\
@@ -236,8 +237,8 @@ Betrachte:\\
 &\;\;=\frac{1}{n}\bigg(\frac{n}{n+1}\bigg)\\
 \prod\limits_{k=2}^{n+1}\bigg(1-\frac{1}{k}\bigg)&\;\;=\frac{1}{n+1}_{\;\;\Square}\\
 \end{align*}
-\subsubsection{Vollständige Induktion Aufgabe 3}
-\href{https://youtu.be/UPkYsl89msk}{Video 13}\\ 
+\subsection{Vollständige Induktion Aufgabe 3}
+
 Beweise: Für $ n\geq 1 $ gilt $ \sum\limits_{k=1}^{n} (-1)^k\cdot k^2=(-1)^n \frac{n(n+1)}{2}$\vspace*{2mm}\\
 \textbf{I.A.}\\
 Für $n=1$ gilt:
@@ -268,8 +269,11 @@ Betrachte:\\
 &\;\;=(-1)^{n+1}\cdot\frac{-n^2-n+2n^2+4n+2}{2}\\
 \sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2&\;\;=(-1)^{n+1}\cdot\frac{n^2+3n+2}{2}_{\;\;\Square}\\
 \end{align*}
-\subsection{Binomischer Lehrsatz und Geometrische Reihe}
-\href{https://youtu.be/aT5my3XaoFo}{Video 14}\\ 
+
+
+
+\section{Binomischer Lehrsatz und Geometrische Reihe}
+
 \textbullet\;\;Binomischer Lehrsatz
 \begin{center}
  \fbox{\parbox  {66mm} {
@@ -332,8 +336,8 @@ Beispiel:\\
 \sum\limits_{k=0}^{3}2^k=\frac{1-2^4}{1-2}=\frac{1-16}{1-2}=15
 \end{align*}
 \newpage
-\subsubsection{Binomischer Satz Aufgabe}
-\href{https://youtu.be/h2Qf1lnF02M}{Video 15}\\ 
+\subsection{Binomischer Satz Aufgabe}
+
 Zeige mit den binomischen Satz, dass $ \big(1+\sqrt{5}\big)^n+\big(1-\sqrt{5}\big)^n \in\mathbb{N} $ ist.\vspace*{4mm} \\
 Für alle $ n \in \mathbb{N} $ gilt:\\
 \begin{align*}
@@ -370,8 +374,10 @@ $ k=2p+1 $\\
 &5^p\sqrt{5}(1+(-1))\\
 &5^p\sqrt{5}\cdot 0 \in \mathbb{N}_{\;\;\Square}
 \end{align*}
-\subsection{Absolutbetrag und reelle Lösungen von Gleichungen}
-\href{https://youtu.be/yOVcaRd8siU}{Video 16}\\ 
+
+
+\section{Absolutbetrag und reelle Lösungen von Gleichungen}
+
 Der (Absolut)-Betrag ist die folgende Funktion:\\
 \begin{center}
 $|\cdot|:\mathbb{R}\longmapsto [o,\infty[$\;\;  mit $ |x| =     \left\{ \begin{array}{rcl}
@@ -396,7 +402,7 @@ Beispiel:\\
 \textbullet\;\;$|-7|=-(-7) =7 $ \tiny{(in Funktion (II.5) einsetzen)}\normalsize \\
 \textbullet \;\;$|7|=7$\\
 \textbullet \;\;$ x<2:|x+2|=-(x+2) $\\
-\href{https://youtu.be/DEDPW_KplM0}{Video 17}\\ 
+
 Funktion: $ f(x)=|x| $\vspace*{2mm}\\
 \begin{center}
 
@@ -475,8 +481,8 @@ x+2-(x-2)=4=1_{ \;\;\tikz \draw[->,>=stealth] (0,0)--++(-0.2,-0.2)--++(0.2,0)--+
 Für $ 2\leq x $ gibt es keine Lösung!\\
 \\
 Fazit: Einzige Lösung ist $ x=\frac{1}{2} $.\\
-\subsubsection{Aufgabe 1 zum Thema reelle Lösungen von Gleichungen}
-\href{https://youtu.be/srEv6mDGUBs}{Video 18}\\ 
+\subsection{Aufgabe 1 zum Thema reelle Lösungen von Gleichungen}
+
 Bestimme alle reellen Lösungen dieser Gleichung:\\
 \begin{align*}
 \big||3x|-|-5|\big|=2
@@ -505,8 +511,8 @@ $x<0:\big||3x|-5\big|=|-3x-5|=|-1(3x+5)|=|(-1)||3x+5|=|3x+5|=2$\\
 \end{quote}
 Fazit: $x_1=\frac{7}{3},\; x_2=1,\; x_3=-\frac{7}{3},\; x_4=-1$ lösen die Gleichung.\\
 
-\subsubsection{Aufgabe 2 zum Thema reelle Lösungen von Gleichungen}
-\href{https://youtu.be/chQF2poVn4U}{Video 19}\\ 
+\subsection{Aufgabe 2 zum Thema reelle Lösungen von Gleichungen}
+ 
 Bestimme alle reellen Lösungen der folgenden Ungleichung:\\
 \begin{align*}
 x^3+11x<6x^2+6
@@ -533,7 +539,7 @@ Mittels Polynomdivision ergibt sich:\\
 \end{center}
 \newpage
 \noindent
-\href{https://youtu.be/l_JcAzCcKKQ}{Video 20}\\
+
 $ p(x)=(x^2-5x+6)(x-1) $\\
 Lösung der quatratischen Gleichung $ x^2-5x+6=0$.\\
 \begin{align*}
