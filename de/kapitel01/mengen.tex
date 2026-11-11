@@ -1,47 +1,61 @@
 \section{Mengen }
 
-Georg Kantor hat 1895 eine Menge wie folgt beschrieben:\\
-Eine Menge ist eine wohldefinierte Zusammenfassung verschiedener Objekte zu einem Ganzen.\\
-Beispiele:\\
+Georg Cantor beschrieb 1895 eine Menge sinngemäß als Zusammenfassung
+bestimmter, wohlunterschiedener Objekte zu einem Ganzen.
 
-\begin{tabular}[t]{lll}% l=linksbündig r=rechtsbündig
-	\textbullet& $S:=\{$Berlin, Hamburg, Köln, Hannover$\}$  \\
-	\textbullet &$ \mathbb{R}$:=$\{x|\;x$ ist eine reelle Zahl\}$\quad \overset{\wedge}{=}$  \glqq Alle Kommazahlen\grqq \vspace*{4mm}\\	
-	& $\blacktriangleright\sqrt{2}\in\mathbb{R}, \{\sqrt{(2)}\}\subset \mathbb{R}$\vspace*{4mm}\\
-	& $\blacktriangleright \emptyset:=\{ \}\subset \mathbb{R}$\vspace*{4mm}\\
-	& $ \blacktriangleright\infty\notin\mathbb{R}$\vspace*{4mm}\\
-	& $\blacktriangleright\{1,2,7,\mathrm{Berlin}\}\notin \mathbb{R}\vspace*{4mm}$
-\end{tabular}\vspace*{2mm} \\
-Wichtige Zahlenmengen:\\
-\begin{tabular}[t]{lll@{\textbullet}ll}% l=linksbündig r=rechtsbündig
-	&&&& $\mathbb{N}:=\{0,1,2,3,\ldots\}$ \\
-	&&&& $\mathbb{Z}:=\{\ldots,-2,-1,0,1,2,\ldots\}$\\
-	&&&& $\mathbb{Q}:=\Big\{\frac{p}{q}\, |\, p\in\mathbb{Z}\wedge q\in\mathbb{N}\backslash\{0\}\Big\}$ \\
-	&&&& $\mathbb{C}:=\{a+\mathrm{i}b \, |\; a,b\in\mathbb{R}\; \text{und } \; \mathrm{i}^2=-1\}$	
-\end{tabular}\vspace*{4mm} \\
-Achtung oft werden die natürlichen Zahlen so definiert:\\
-\begin{tabular}[t]{lll@{\textbullet}ll}% l=linksbündig r=rechtsbündig
-	&&&& $\mathbb{N}:=\{1,2,3,\ldots\}$ \\
-	&&&& $\mathbb{N}_0:=\{0,1,2,\ldots\}$\\
-	
-\end{tabular} \vspace*{4mm}\\
-Eigenschaft:\\
-$\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$\\
-Mathematische Schreibweisen:\vspace*{2mm}\\
-$|$ für die gilt\\
-$\notin $ ist kein Element von\\
-$\in$ ist Element von\\
-$\{\}$ leere Menge\\
+\textbf{Beispiele:}
 
+\begin{align*}
+ S &:= \{\text{Berlin},\text{ Hamburg},\text{ Köln},\text{ Hannover}\},\\
+ \sqrt{2} &\in \mathbb{R},\qquad \{\sqrt{2}\}\subseteq\mathbb{R},\\
+ \emptyset &:= \{\}\subseteq\mathbb{R},\\
+ \infty &\notin\mathbb{R},\\
+ \{1,2,7,\text{Berlin}\} &\nsubseteq\mathbb{R}.
+\end{align*}
 
+Die Menge $\mathbb{R}$ umfasst die rationalen und die irrationalen
+Zahlen. Beispielsweise gehören $\frac{1}{2}$, $\sqrt{2}$ und $\pi$
+zu den reellen Zahlen.
+
+\textbf{Wichtige Zahlenmengen:}
+
+\begin{align*}
+ \mathbb{N} &:= \{0,1,2,3,\ldots\},\\
+ \mathbb{Z} &:= \{\ldots,-2,-1,0,1,2,\ldots\},\\
+ \mathbb{Q} &:= \left\{\frac{p}{q}\mid p\in\mathbb{Z},\;
+                       q\in\mathbb{N}\setminus\{0\}\right\},\\
+ \mathbb{C} &:= \{a+\mathrm{i}b\mid a,b\in\mathbb{R},\;\mathrm{i}^2=-1\}.
+\end{align*}
+
+\textbf{Hinweis:} Die natürlichen Zahlen werden nicht überall gleich
+definiert. In diesem Skript gilt $0\in\mathbb{N}$. Alternativ wird
+häufig $\mathbb{N}=\{1,2,3,\ldots\}$ und
+$\mathbb{N}_0=\{0,1,2,\ldots\}$ verwendet.
+
+Es gelten die Inklusionen
+\[
+ \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}
+ \subseteq\mathbb{R}\subseteq\mathbb{C}.
+\]
+
+\textbf{Mathematische Schreibweisen:}
+
+\begin{align*}
+ x\in A &\quad\text{bedeutet: $x$ ist Element von $A$,}\\
+ x\notin A &\quad\text{bedeutet: $x$ ist kein Element von $A$,}\\
+ A\subseteq B &\quad\text{bedeutet: $A$ ist Teilmenge von $B$,}\\
+ \emptyset &\quad\text{bezeichnet die leere Menge.}
+\end{align*}
+In einer Mengenbeschreibung bedeutet $\mid$ so viel wie
+„mit der Eigenschaft“.
 
 \subsection{Intervalle}
 
 \textbf{Intervalle:}\\
-seien $a,b\in\mathbb{R}$\\
-$\blacktriangleright$ Abgeschlossene Intervall\\  
+Seien $a,b\in\mathbb{R}$ mit $a<b$.\\
+$\blacktriangleright$ Abgeschlossenes Intervall\\  
 \begin{quote}
-	$[a,b]\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;a\leq x \leq b\}$\vspace*{4mm}\\
+	$[a,b]:=\{x\in\mathbb{R}\;|\;a\leq x \leq b\}$\vspace*{4mm}\\
 	\begin{tikzpicture}
 		\node at (2,1) [rotate=0,color=red] {$[$};
 		\node at (2,0.5) [rotate=0, color=red] {$a$};
@@ -60,9 +74,9 @@ $\blacktriangleright$ Abgeschlossene Intervall\\
 		\node at (4,0.5) [rotate=0, color=red] {$3$};
 	\end{tikzpicture}\\
 \end{quote}
-$\blacktriangleright$ Rechts halboffene Intervall\\ 
+$\blacktriangleright$ Rechts halboffenes Intervall\\ 
 \begin{quote}
-	$[a,b[\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;a\leq x < b\}$\vspace*{4mm}\\
+	$[a,b[:=\{x\in\mathbb{R}\;|\;a\leq x < b\}$\vspace*{4mm}\\
 	\begin{tikzpicture}
 		\node at (2,1) [rotate=0,color=red] {$[$};
 		\node at (2,0.5) [rotate=0, color=red] {$a$};
@@ -72,11 +86,11 @@ $\blacktriangleright$ Rechts halboffene Intervall\\
 		\node at (4,0.5) [rotate=0, color=black] {$b$};
 	\end{tikzpicture}\\
 	$b\notin[a,b[$\\
-	(analog: das limks soffene Intervall: $\quad  ]a,b]$) \\
+	(analog: das links halboffene Intervall: $\quad  ]a,b]$) \\
 \end{quote}
-$\blacktriangleright$ Offene Intervall\\ 
+$\blacktriangleright$ Offenes Intervall\\ 
 \begin{quote}
-	$]a,b[\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;a<x < b\}$\vspace*{4mm}\\
+	$]a,b[:=\{x\in\mathbb{R}\;|\;a<x < b\}$\vspace*{4mm}\\
 	\begin{tikzpicture}
 		\node at (2,1) [rotate=0,color=black] {$]$};
 		\node at (2,0.5) [rotate=0, color=black] {$a$};
@@ -88,7 +102,7 @@ $\blacktriangleright$ Offene Intervall\\
 \end{quote}
 $\blacktriangleright$ Spezielle Teilintervalle\\
 \begin{quote}
-	Geometrisch gedeutet ist dies eine Teilgerade der reellen Zahlen.\vspace*{4mm}\\ $]-\infty,a[\subseteq\mathbb{R}:=\{x\in\mathbb{R}\;|\;x<a\}$\vspace*{4mm}\\
+	Geometrisch gedeutet ist dies eine Teilgerade der reellen Zahlen.\vspace*{4mm}\\ $]-\infty,a[:=\{x\in\mathbb{R}\;|\;x<a\}$\vspace*{4mm}\\
 	\begin{tikzpicture}
 		
 		
@@ -98,12 +112,12 @@ $\blacktriangleright$ Spezielle Teilintervalle\\
 		\node at (4,0.5) [rotate=0, color=black] {$a$};
 	\end{tikzpicture}\ \\
 \end{quote}
-Offene Intervalle werden auch statt: $]a,b[$ auch  so dargestellt: $(a,b)$.\\
-Das rechts halboffene Intervall: $[a,b)$\\
-Das links halboffene Intervall: $(a,b]$\\
+Das offene Intervall $]a,b[$ wird auch als $(a,b)$ geschrieben.\\
+Das rechts halboffene Intervall $[a,b[$ wird auch als $[a,b)$ geschrieben.\\
+Das links halboffene Intervall $]a,b]$ wird auch als $(a,b]$ geschrieben.\\
 \subsection{Durchschnitt, Vereinigung und Differenzmenge}
 
-\textbf{Durchschnitt, Vereinigung, Differenzmenge}\\
+\textbf{Durchschnitt, Vereinigung und Differenzmenge}\\
 $\blacktriangleright$ Durchschnitt\\
 \begin{quote}
 	
@@ -270,23 +284,28 @@ $\blacktriangleright$ Differenzmenge\\
 \end{quote}
 \subsection{Aufgabe zu Mengen 1}
 
-\textbf{Aufgabe:}\\
-Bestimme die folgende Menge $\mathbb{M}$:\\
-$\mathbb{M}=\{x\in \mathbb{Z}\;|\; \text{$ x $  ist durch 3 teilbar} \}\cap \{x\in \mathbb{Z}\ \;|\;\text{$ x $ ist durch 4 teilbar } \}$\vspace*{2mm}\\
-Für die Menge der Zahlen die durch 3 teilbar sind gilt:\\
-\begin{align*}
-	\{3x\;|\;x\in \mathbb{Z}\}\\
-\end{align*}
-Für die Menge der Zahlen die durch 4 teilbar sind gilt:\\
-\begin{align*}
-	\{4x\;|\;x\in \mathbb{Z}\}\\
-\end{align*}
-Für welche Menge gilt dann, dass $x$ durch 3 und durch 4 teilbar ist?\\
-Das Produkt von 4 und 3 ist immer durch 3 und 4 teilbar. Also gilt:\\
-$\mathbb{M}=\{x\in\mathbb{Z}\; | \; x\;\text{ist durch 3 und 4 teilbar} \}=\{12x\;|\;x\in\mathbb{Z}\}$\vspace*{2mm}\\
+\textbf{Aufgabe:}
 
+Bestimme die folgende Menge $\mathbb{M}$:
+\[
+ \mathbb{M}=\{x\in\mathbb{Z}\mid 3\text{ teilt }x\}
+ \cap\{x\in\mathbb{Z}\mid 4\text{ teilt }x\}.
+\]
 
+\textbf{Lösung:}
 
+Die durch 3 bzw. 4 teilbaren ganzen Zahlen bilden die Mengen
+\[
+ \{3n\mid n\in\mathbb{Z}\}
+ \quad\text{bzw.}\quad
+ \{4n\mid n\in\mathbb{Z}\}.
+\]
+Da 3 und 4 teilerfremd sind, beträgt ihr kleinstes gemeinsames
+Vielfaches $\operatorname{kgV}(3,4)=12$. Genau die Vielfachen von 12
+sind daher durch beide Zahlen teilbar. Folglich gilt:
+\[
+ \boxed{\mathbb{M}=\{12n\mid n\in\mathbb{Z}\}.}
+\]
 
 \subsection{Aufgabe zu Mengen 2}
 
@@ -359,25 +378,41 @@ Somit gilt:
 
 \subsection{Aufgabe zu Mengen 3}
 
-Bestimme die folgende Menge:\\ 
-\begin{align*}
-	\mathbb{M}:\;\overset{\bigcap}{\scriptscriptstyle  m \in \mathbb{R}}\{x\in\mathbb{R}\;|\;(x-m)(x-2)(x-3)=0  \}
-\end{align*}
-Für $m=1$ gilt:\\
-\begin{align*}
-	m=1:\{x\in\mathbb{R}\;|\;(x-1) (x-2) (x-3)=0 \}=\{1,2,3\}
-\end{align*}
-Für $m=\sqrt{2}$ gilt:\\
-\begin{align*}
-	m=\sqrt{2}:\{x\in\mathbb{R}\;|\;(x-\sqrt{2})(x-2)(x-3) \}=\{\sqrt{2},2,3\}
-\end{align*}
-Für m allgemein gilt:\\
-\begin{align*}
-	m:\{x\in\mathbb{R}\;|\;(x-m)(x-2)(x-3) \}=\{m,2,3\}
-\end{align*}
-Die Schnittmenge:\\
-\begin{align*}
-	\mathbb{M}:\;\overset{\bigcap}{\scriptscriptstyle  m \in \mathbb{R}}\{x\in\mathbb{R}\;|\;(x-m)(x-2)(x-3)=0  \}=\{2,3\}
-\end{align*}
-(weil für x=2 und x=3 und für m=2 und m=3 eine Lösung existiert)
+\textbf{Aufgabe:}
 
+Bestimme die folgende Menge:
+\[
+ \mathbb{M}=\bigcap_{m\in\mathbb{R}}
+ \{x\in\mathbb{R}\mid(x-m)(x-2)(x-3)=0\}.
+\]
+
+\textbf{Lösung:}
+
+Für $m=1$ gilt:
+\[
+ \{x\in\mathbb{R}\mid(x-1)(x-2)(x-3)=0\}=\{1,2,3\}.
+\]
+Für $m=\sqrt{2}$ gilt:
+\[
+ \{x\in\mathbb{R}\mid(x-\sqrt{2})(x-2)(x-3)=0\}
+ =\{\sqrt{2},2,3\}.
+\]
+Für ein beliebiges $m\in\mathbb{R}$ ist die jeweilige Menge
+\[
+ M_m=\{x\in\mathbb{R}\mid(x-m)(x-2)(x-3)=0\}
+ =\{m,2,3\}.
+\]
+Dabei gilt auch für $m=2$ oder $m=3$ die Mengenschreibweise
+$M_m=\{m,2,3\}$; doppelte Elemente werden in Mengen nicht mehrfach
+gezählt.
+
+Die Werte $x=2$ und $x=3$ erfüllen die Gleichung für jedes
+$m\in\mathbb{R}$, weil jeweils einer der beiden festen Faktoren
+verschwindet. Für ein $x\notin\{2,3\}$ lässt sich dagegen ein
+$m\neq x$ wählen. Dann ist keiner der drei Faktoren null.
+Somit ist kein weiterer Wert in allen Mengen enthalten.
+
+Es folgt:
+\[
+ \boxed{\mathbb{M}=\bigcap_{m\in\mathbb{R}}M_m=\{2,3\}.}
+\]

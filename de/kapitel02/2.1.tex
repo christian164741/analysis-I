@@ -1,0 +1,171 @@
+%2.1
+\section{Summen und Produkte}
+
+
+\begin{center}
+	\fbox{\parbox [t] {90mm} {
+			Seien $n,m \in\mathbb{Z}$ mit $m\leqq n$. Dann definieren wir:\\
+			\begin{center}
+				\begin{quote}
+					$\sum\limits_{k=m}^{n} a_k:=a_m+a_{m+1}+\ldots + a_n$\\
+					$\prod\limits_{k=m}^{n} a_k:=a_m\cdot a_{m+1}\cdot\ldots\cdot a_n$
+				\end{quote}
+			\end{center}
+	}}	
+\end{center}
+$k$ ist der Laufindex\\
+Summenzeichen $\sum$ ist der griechische Buchstabe Sigma.\\
+Produktzeichen $\prod$ ist der griechische Buchstabe Pi.
+
+\begin{center}
+	\fbox{\parbox [t] {70mm} {
+			Seien $n,m \in\mathbb{Z}$ mit $m > n$. Dann gilt:\\
+			\begin{center}
+				
+				$\sum\limits_{k=m}^{n} a_k:=0$\\
+				$\prod\limits_{k=m}^{n} a_k:=1$\\
+				
+			\end{center}
+			
+			
+	}}
+\end{center}
+Beispiel:\\
+\textbullet$\;\;14=2+3+4+5=\sum\limits_{k=1}^{5}k$\\
+\textbullet$\;\;\sum\limits_{k=1}^{0}=0$ (neutrales Element der Addition)\\
+\textbullet$\;\;\prod\limits_{k=7}^{-3}=1$ (neutrales Element der Multiplikation)\vspace*{4mm}\\
+
+
+Definition:\vspace*{2mm}\\
+\begin{center}
+	\fbox{\parbox  {70mm} {
+			Für $n\in\mathbb{N}$ definiert man: n-Falkultät\\
+			\begin{align*}
+				n!:=\prod\limits_{k=1}^{n}k=1\cdot 2\cdot 3\cdot \ldots\cdot (n-1)n
+			\end{align*}
+	}}
+\end{center}
+Beispiel:\\
+$5!=1\cdot 2\cdot 3 \cdot 4 \cdot 5=120$\\
+$1!=1$\\
+$2!=1\cdot2=2$\\
+$3!=1 \cdot 2 \cdot 3=6$\\
+$0!=\prod\limits_{k=1}^{0}k=1$ da $k>0$\\
+\subsection{Rechenregeln für Summen und Produkte}
+
+\begin{center}
+	\fbox{\parbox  {90mm} {
+			Seien $n,m\in\mathbb{Z}$ mit $m\leq n$ und $j\in\mathbb{N}$, dann gilt:\\
+			\begin{align*}
+				\sum\limits_{k=m}^{n+j}a_k&=\sum\limits_{k=m}^{n}a_k + \sum\limits_{k=n+1}^{n+j}a_k\\
+				\prod\limits_{k=m}^{n+j}a_k&=\prod\limits_{k=m}^{n}a_k \cdot \prod\limits_{k=n+1}^{n+j}a_k
+			\end{align*}
+	}}
+\end{center}
+Beispiel:\\
+
+$\underbrace{\sum\limits_{k=2}^{5}k}_{2+3+4+5=14}=\sum\limits_{k=2}^{3+2}k=\underbrace{\sum\limits_{k=2}^{3}k}_{2+3=5}+\underbrace{\sum\limits_{k=3+1}^{5}k}_{4+5=9}$\\
+Beispiel:\\
+$n!=\prod\limits_{k=1}^{n}k$\\
+sei $n\in \mathbb{N}$ mit $m\leqq n$ \\
+$n=m+(n-m)$ mit $(n-m)\in \mathbb{N}$\\
+dann gilt:\\
+$n!=\prod\limits_{k=1}^{n}k=\prod\limits_{k=1}^{\scriptscriptstyle m+(n-m)}k=\underbrace{\prod\limits_{k=1}^{m}k}_{m!}\cdot\prod\limits_{\scriptscriptstyle k=m+1}^{\scriptscriptstyle m+(n-m)}k$\\
+$\overset{\div m!}{\Leftrightarrow}\frac{n!}{m!}=\prod\limits_{\scriptscriptstyle k=m+1}^{\scriptscriptstyle m+(n-m)}k=\prod\limits_{\scriptscriptstyle k=m+1}^{n}k=(m+1)\cdot (m+2)\cdot (m+3)\ldots n$\vspace*{2mm}\\
+\begin{center}
+	\boxed{
+		\frac{n!}{m!}=\prod\limits_{\scriptscriptstyle  k=m+1}^{n}k=(m+1)\cdot (m+2)\cdot (m+3)\cdot\ldots\cdot n
+	}
+\end{center}
+\subsection{Aufgabe zu Summen und Produkte}
+
+Berechne folgende Summenen und Produkte.\\
+(i)$\;\;\prod\limits_{n=-3}^{3}=4^n $\\
+(ii)$\;\sum\limits_{k=1}^{3}\bigg(\prod\limits_{j=1}^{k}i\bigg)  $\vspace*{2mm}\\
+\newpage
+\noindent
+zu(i):
+\begin{quote}
+	$\prod\limits_{n=-3}^{3}=4^n $\\
+	$ 4^n=? $\\
+	$ a^b\cdot a^c=a^{b+c} $\\
+	also gilt: $ n=\sum\limits_{n=-3}^{3}n=-3+-2+-1+0+1+2+3=0 $\\
+	$\prod\limits_{n=-3}^{3}=4^n\Leftrightarrow\prod\limits_{n=-3}^{3}=4^{\big(\scriptscriptstyle\sum\limits_{n=-3}^{n}n\big)}\Leftrightarrow\prod\limits_{n=-3}^{3}=4^0=1$  
+\end{quote}
+zu (ii):
+\begin{quote}
+	$ \sum\limits_{k=1}^{3}\bigg(\prod\limits_{j=1}^{k}i\bigg) = \underbrace {\prod\limits_{j=1}^{1}}_{1!}j+\underbrace {\prod\limits_{j=1}^{2}}_{2!}j+\underbrace {\prod\limits_{j=1}^{3}}_{3!}j=1+1\cdot2+1\cdot2\cdot3=1+2+6=9 $
+\end{quote}
+\subsection{Indexverschiebung von Summen und Produkte}
+
+$ \sum\limits_{k=2}^{3}k=2+3=(5-3) +(6-3)=\sum\limits_{k=5}^{6}(k-3)$\\
+\begin{center}
+	\fbox{\parbox  {70mm} {
+			Seien $n,m\in\mathbb{Z}$ mit $ m<n $ und $ j\in\mathbb{N} $\\
+			\begin{align*}
+				\sum\limits_{k=m}^{n}=\sum\limits_{\scriptscriptstyle k=m+j}^{n+j}a_{k-j}\\
+				\prod\limits_{k=m}^{n}=\prod\limits_{\scriptscriptstyle k=m+j}^{n+j}a_{k-j}
+			\end{align*}
+	}}\\
+	
+\end{center}
+$ \sum\limits_{k=2}^{k}k=2+3=\sum\limits_{\scriptscriptstyle k=2+3}^{3+3}(k-3)$\vspace*{2mm}\\
+Beispiel:\\
+\textbullet\;\; Indexverschiebung der Summe $ \sum\limits_{k=2}^{n}3^k  $ um $ +7 $.
+\begin{quote}
+	$ \sum\limits_{k=2}^{n}3^k=\sum\limits_{\scriptscriptstyle k=2+7}^{n+7}3^{(k-7)}=\sum\limits_{k=9}^{n+7}3^{(k-7)} $
+\end{quote}
+\textbullet\;\; Indexverschiebung des Produktes $ \prod\limits_{k=5}^k(k-1)^k  $ um $ +5 $.\\
+\begin{quote}
+	$ \prod\limits_{k=5}^k(k-1)^k=\prod\limits_{k=10}^{n+5}(k-5)((k-5)-1)^{(k-5)}=\prod\limits_{k=10}^{n+5}(k-5)((k-6)^{(k-5)} $
+\end{quote}
+\subsection{Aufgabe I zur Indexverschiebung}
+
+Berechne:
+$ \sum\limits_{k=1}^{25}(1+k)^2-\sum\limits_{s=4}^{28}=s^2-4s+3  $\\
+Durch Anpassen der Grenzen durch Indexverschiebung kann man die Summen leichter zusammenfassen.\\
+NR.:\\
+\begin{quote}
+	$\sum\limits_{s=4}^{28}=s^2-4s+3  $ Indexverschiebung um -3\\
+	$ \sum\limits_{k=4}^{28}=k^2-4k+3= \sum\limits_{k=1}^{25}=(k+3)^2-4(k+3)+3$\\
+\end{quote}
+\begin{align*}
+	\sum\limits_{k=1}^{25}(1+k)^2-\sum\limits_{s=4}^{28}=s^2-4s+3&=\sum\limits_{k=1}^{25}(1+k)^2-((k+3)^2-4(k+3)+3) \\
+	&=\sum\limits_{k=1}^{25}(1+k)^2-(k+3)^2+4(k+3)-3\\
+	&=\sum\limits_{k=1}^{25}1+2k+k^2-k^2-6k-9+4k+9\\
+	&=\sum\limits_{k=1}^{25}1=1+1+1+\ldots = 25\\
+\end{align*}
+\subsection{Aufgabe II zur Indexverschiebung}
+
+Schreibe die folgende Summe in der Form:\\
+(i) \;\;$ \sum\limits_{k=1}^{n}a_k $ und
+(ii) $ \sum\limits_{j=6}^{n+5}b_k $
+mit $ -1+3-5+7-9\pm\ldots\mp n $ und $n$ soll ungerade sein.\vspace*{6mm}\\
+zu (i): $\sum\limits_{k=1}^{n}a_k  $\\
+\begin{quote}
+	Ein alternierendes Vorzeichen bekommt man mit der Summe:\\
+	$\sum\limits_{k=1}^{n}(-1)^k=(-1)^1+(-1)^2+(-1)^3\pm\ldots\mp n=-1+1-1+1\pm\ldots\mp n$\vspace*{2mm}\\
+	Ungerade Zahlen bekommt man mit der Summe:\\
+	$\sum\limits_{k=1}^{n}2k+1=3+5+7+....+2k+1 $\\
+	$\sum\limits_{k=1}^{n}(-1)^k (2k+1)=-3+5-7\pm\ldots\mp 2k+1$\\
+	$\text{Es muß mit der Zahl 1 gestartet werden, also erzeugt man die ungerade Zahl mit }2k-1$\\
+	$\sum\limits_{k=1}^{n}(-1)^k (2k-1)=-1+3-5\pm\ldots\mp 2k-1$\\
+	\begin{align*}
+		\sum\limits_{k=1}^{n}a_k=\sum\limits_{k=1}^{n}(-1)^k (2k-1)
+	\end{align*}
+\end{quote}
+\newpage
+\noindent
+zu (ii): $ \sum\limits_{j=6}^{n+5}b_k $\\
+\begin{quote}
+	Mit Indexverschiebung der Summe $\sum\limits_{k=1}^{n}(-1)^k (2k-1)  $ mit 5, bekommt man:\\
+	\begin{align*}
+		\sum\limits_{k=1+5}^{n+5}(-1)^{k-5} (2(k-5)-1)&=(-1)^k(-1)^{-5}(2k-11)\\&=(-1)^k(-1)(2k-11)\\&=(-1)^{k-1}(2k-11)
+	\end{align*}
+	
+\end{quote}
+\begin{align*}
+	\sum\limits_{k=6}^{n+5}b_k=\sum\limits_{k=6}^{n+5}(-1)^{k-1}(2k-11)
+\end{align*}
+
+

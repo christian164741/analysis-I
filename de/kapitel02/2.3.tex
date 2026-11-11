@@ -1,0 +1,103 @@
+%2.3
+\section{Binomischer Lehrsatz und Geometrische Reihe}
+
+\textbullet\;\;Binomischer Lehrsatz
+\begin{center}
+	\fbox{\parbox  {66mm} {
+			\begin{center}
+				Binominalkoeffizient:\\
+			\end{center}
+			Seien $ n,k \in\mathbb{N} $ und $ k>0 $ dann gilt:\\
+			\begin{align*}
+				&\text{für }n\geq k \\
+				&\binom{n}{k}:=\frac{n!}{k!(n-k)!}\;\;\;\;\in \mathbb{N}\\
+				&\binom{n}{n}:=1\\
+				&\binom{n}{0}:=1\\
+				& \text{für }n<k \\
+				&\binom{n}{k}:=0
+			\end{align*}
+	}}
+\end{center}
+\newpage
+\noindent
+Beispiel:\\
+\begin{align*}
+	\binom{3}{2}&=\frac{3!}{2!(3-2)!}=\frac{1\cdot2\cdot3}{1\cdot2(1)}=3 \\
+	\binom{5}{3}&=\frac{5!}{3!(5-3)!}=\frac{1\cdot2\cdot3\cdot4\cdot5}{1\cdot2\cdot3\cdot2}=10 \\
+\end{align*}
+
+\begin{center}
+	\fbox{\parbox  {76mm} {
+			\begin{center}
+				Binomischer Satz
+			\end{center}
+			Seien $ a,b\in \mathbb{R} $, dann gilt für alle $ n \in \mathbb{N} $\\
+			\begin{align*}
+				(a+b)^n=\sum\limits_{k=0}^{n}\binom{n}{k}a^{n-k} \;\;b^k
+			\end{align*}	
+	}}
+	\
+\end{center}
+Beispiel:\\
+\begin{align*}
+	\big(3-\sqrt{2}\big)^2&=\sum\limits_{k=0}^{2}\binom{2}{k}3^{2-k}\;\;\big(-\sqrt{2}\big)^k\\
+	&=\binom{2}{0}3^{2-0}\;\;\big(-\sqrt{2}\big)^0+\binom{2}{1}3^{2-1}\;\;\big(-\sqrt{2}\big)^1+\binom{2}{2}3^{2-2}\;\;\big(-\sqrt{2}\big)^2\\
+	&=1\cdot 9+2\cdot 3\big(-\sqrt{2}\big)+1\cdot 1\cdot 2\\
+	&=9-6\sqrt{2}+2
+\end{align*}
+\textbullet\;\;Geometrische Reihe
+\begin{center}
+	\fbox{\parbox  {80mm} {
+			\begin{center}
+				Geometrische Reihe\vspace*{2mm}\\
+				$\sum\limits_{k=0}^{n}x^k =     \left\{ \begin{array}{rcl}
+					n+1 & \mbox{für} & x=1\\
+					\frac{1-x^{n+1}}{1-x} & \mbox{für} & x\neq  1 \\
+					
+				\end{array}\right.$	
+			\end{center}
+	}}
+\end{center}
+Beispiel:\\
+\begin{align*}
+	\sum\limits_{k=0}^{3}2^k=\frac{1-2^4}{1-2}=\frac{1-16}{1-2}=15
+\end{align*}
+\newpage
+\subsection{Binomischer Satz Aufgabe}
+
+Zeige mit den binomischen Satz, dass $ \big(1+\sqrt{5}\big)^n+\big(1-\sqrt{5}\big)^n \in\mathbb{N} $ ist.\vspace*{4mm} \\
+Für alle $ n \in \mathbb{N} $ gilt:\\
+\begin{align*}
+	\text{\textbullet }\;\;\big(1+\sqrt{5}\big)^n&=\sum\limits_{k=0}^{n}\binom{n}{k}1^{n-k}\big(\sqrt{5}\big)^k=\sum\limits_{k=0}^{n}\binom{n}{k}\big(\sqrt{5}\big)^k\\
+	\text{\textbullet }\;\;\big(1-\sqrt{5}\big)^n&=\sum\limits_{k=0}^{n}\binom{n}{k}1^{n-k}\big(-\sqrt{5}\big)^k=\sum\limits_{k=0}^{n}\binom{n}{k}\big(-\sqrt{5}\big)^k\\
+\end{align*}
+Damit ist die Aussage äquivalent zu:\\
+\begin{align*}
+	&\sum\limits_{k=0}^{n}\binom{n}{k}\big(\sqrt{5}\big)^k+\sum\limits_{k=0}^{n}\binom{n}{k}\big(-\sqrt{5}\big)^k \in \mathbb{N}\\
+	&\sum\limits_{k=0}^{n}\binom{n}{k}\bigg(\big(\sqrt{5}\big)^k+\big(-\sqrt{5}\big)^k\bigg)& |\big(-\sqrt{5}\big)^k=\underbrace {-1^k}_{Vorzeichenwechsel}\big(\sqrt{5}\big)^k\\
+	&\sum\limits_{k=0}^{n}\binom{n}{k}\bigg(\big(\sqrt{5}\big)^k-\big(-1^k\sqrt{5}\big)^k\bigg)\\
+	&\sum\limits_{k=0}^{n}\binom{n}{k}\bigg(\sqrt{5}\big)^k(1+(-1)^k\bigg)\\
+\end{align*}
+Wir zeigen, dass jeder Summant von der Summe aus $\in \mathbb{N} $ ist, dann ist auch die Summe $\in \mathbb{N} $\\
+d.h. $ \binom{n}{k}\big(\sqrt{5}\big)^k(1+(-1)^k) \in \mathbb{N}$ für $ k \in \mathbb{N} $\\
+$ \binom{n}{k}  \in \mathbb{N}$\\$\Rightarrow$ dann müssen noch die einzelnen Faktoren von $ \big(\sqrt{5}\big)^k\big(1+(-1)^k\big) \in \mathbb{N}$ sein.\vspace*{2mm} \\
+\underline{1.Fall (k ist gerade):}\\
+$ k=2p $\\
+\begin{align*}
+	&\big(\sqrt{5}\big)^k\Big(1+(-1)^k\Big)\\
+	&\big(\sqrt{5}\big)^{2p}\Big(1+(-1)^{2p}\Big)\\
+	&\Big(\big(\sqrt{5}\big)^2\Big)^p\Big(1+\big((-1)^2 \big)^p\Big)\\
+	&5^p(1+1^p)\\
+	&5^p(2)\in \mathbb{N}_{\;\;\Square}
+\end{align*}
+\newpage
+\noindent
+\underline{2.Fall (k ist ungerade):}\\
+$ k=2p+1 $\\
+\begin{align*}
+	&\big(\sqrt{5}\big)^k\big(1+(-1)^k\big)\\
+	&\big(\sqrt{5}\big)^{2p+1}\Big(1+\big(-1\big)^{2p+1}\Big)\\
+	&\big(\sqrt{5}\big)^{2p}\big(\sqrt{5}\big)^1 \big(1+\big(\big(-1\big)^{2p}(-1)^1\big)\\
+	&5^p\sqrt{5}(1+(-1))\\
+	&5^p\sqrt{5}\cdot 0 \in \mathbb{N}_{\;\;\Square}
+\end{align*}

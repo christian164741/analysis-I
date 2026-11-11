@@ -1,14 +1,25 @@
 \section{Umkehrabbildung}
 
-%\textbf{Definition (Komposition):}\\
-\textbf{Definition (Umkehrabbildung):}\\
-Sei $f:\mathbb{D}_f\longmapsto\mathbb{W}_f$ eine bijektive Abbildung, dann existiert zu jedem $y\in\mathbb{W}_f$ ein $x\in\mathbb{D}_f$ mit $f(x)=y$. Man definiert:\\
-\begin{align*}
-	f^{-1}:\mathbb{W}_f\longmapsto \mathbb{D}_f \text{ mit } y=f(x)\longmapsto x
-\end{align*}
-Die Abbildung $f^{-1}$ heißt Umkehrabbildung oder Umkehrfunktion.\\
+\textbf{Definition (Umkehrabbildung):}
+
+Seien $D_f$ und $W_f$ Mengen und
+$f:D_f\rightarrow W_f$ eine bijektive Abbildung.
+Dann gibt es zu jedem $y\in W_f$ genau ein $x\in D_f$
+mit $f(x)=y$.
+
+Die Umkehrabbildung ist definiert durch
+\[
+f^{-1}:W_f\rightarrow D_f,\qquad
+y\mapsto x \quad\text{mit } f(x)=y.
+\]
+Sie wird auch Umkehrfunktion genannt.
+
+Die folgende Zeichnung verdeutlicht die Zuordnung
+$x\mapsto f(x)$ und die Rückzuordnung
+$y\mapsto f^{-1}(y)$.
+
 \begin{center}
-	\begin{tikzpicture}
+\begin{tikzpicture}
 		
 		% Gitternetzlinien
 		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
@@ -46,17 +57,22 @@ Die Abbildung $f^{-1}$ heißt Umkehrabbildung oder Umkehrfunktion.\\
 		\draw[color=red,thick,dashed] (1.5,-0.7) node {$x_2$}  ;
 		\draw[color=red,thick,dashed] (-0.8,2.25) node {$y$}  ;
 		
-	\end{tikzpicture}\\
+	\end{tikzpicture}
 \end{center}
-Die Abbildung $f(x_1)$ geht von $x_1$ nach $f(x_1)$ und die Umkehrabildung von $y$ nach $x_2$.\vspace*{2mm}\\ 
-Beispiel:\\
 
+\textbf{Beispiel:}
+
+Wir betrachten die quadratische Funktion mit
+eingeschränktem Definitionsbereich:
 \begin{align*}
-	f:&[0,\infty[\longmapsto[0,\infty[ \text{ mit } x\longmapsto x^2\\
-	f^{-1}:&[0,\infty [\longmapsto[0,\infty[ \text{ mit }x\longmapsto \sqrt{x}\\ 
-\end{align*} 
+f&:[0,\infty[\ \rightarrow [0,\infty[,
+& x&\mapsto x^2,\\
+f^{-1}&:[0,\infty[\ \rightarrow [0,\infty[,
+& x&\mapsto \sqrt{x}.
+\end{align*}
+
 \begin{center}
-	\begin{tikzpicture}
+\begin{tikzpicture}
 		% Gitternetzlinien
 		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
 		% x-Achse
@@ -82,42 +98,66 @@ Beispiel:\\
 		(\x,{\x*\x}) node[below, xshift=1.5em]{$f(x)$};
 		\draw[thick,color=blue] plot[samples=200, domain=0:4] 
 		(\x,{sqrt(\x)}) node[below, xshift=-1.4em,yshift=-.6em]{$f^{-1}(x)$};
-	\end{tikzpicture}\\
+	\end{tikzpicture}
 \end{center}
+
 \textbf{Eigenschaften:}
-\begin{quote}
-	\textbullet $\;\; f^{-1}\circ f(x)=x=f\circ  f^{-1}$\\
-	\textbullet $\;\; f(x)$ gespiegelt an der  Achse $f(x)=x$ ergibt die Umkehrfunktion $f^{-1}(x)$.
-\end{quote}
-Beispiel:\\
-Sei $f(x)=x^2$ und 
-$f^{-1}=\sqrt{x}$.\\
-Bilde $f^{-1}\circ f$ und $f \circ f^{-1}$:
+
+Für eine bijektive Funktion gelten die Identitäten
 \begin{align*}
-	f^{-1}(x)\circ f(x)=\sqrt{x^2}=x=(\sqrt{x})^2=f(x)\circ f^{-1}(x)\vspace*{4mm}\\
+(f^{-1}\circ f)(x)&=x
+&&\text{für alle }x\in D_f,\\
+(f\circ f^{-1})(y)&=y
+&&\text{für alle }y\in W_f.
 \end{align*}
-\begin{tabular}[t]{lll}% l=linksbündig r=rechtsbündig
-	Merke:&&\\
-	& $f^{-1}$ & Umkehrfunktion \\
-	& $\frac{1}{x^2}$ & Reziproke\\
-	&$	 f^{-1}_{[0,\infty [}$& Urbild\\
-\end{tabular} \\
+
+Die Graphen von $f$ und $f^{-1}$ sind bei reellen
+Funktionen Spiegelbilder an der Geraden $y=x$,
+sofern beide Graphen in demselben Koordinatensystem
+dargestellt werden.
+
+Für das Beispiel $f(x)=x^2$ mit $x\geq 0$ folgt:
+\begin{align*}
+(f^{-1}\circ f)(x)
+&=\sqrt{x^2}=|x|=x
+&&\text{für }x\geq 0,\\
+(f\circ f^{-1})(y)
+&=(\sqrt{y})^2=y
+&&\text{für }y\geq 0.
+\end{align*}
+
+\textbf{Wichtig:}
+Die Umkehrfunktion $f^{-1}$ ist nicht mit der
+Kehrwertfunktion $1/f(x)$ zu verwechseln.
+Außerdem ist das Urbild $f^{-1}(V)$ einer Menge $V$
+auch ohne Umkehrfunktion definiert; die Notation
+wird aus dem Zusammenhang unterschieden.
+
 \subsection{Aufgabe zur Umkehrabbildung Teil I}
 
-%\textbf{Definition (Komposition):}\\
-Sei $f(x)=x^2-2x$ gegeben.\\
-\begin{tabular}[t]{lll}% l=linksbündig r=rechtsbündig
-	(i) &Bestimme $\mathbb{D}_f$ max, so dass $f(x)$ umkehrbar ist.\\ 
-	(ii)&Bestimme $f^{-1}(x)$  \\	
-\end{tabular}\\ 
-zu (i):
-\begin{quote}
-	$\mathbb{D}_f$ ist maximal, wenn  die Funktion bijektiv ist.\\
-	$f(x)=x^2-2x$\\
-	Nullstellen sind: $x_1=0$, $x_2=2$\\
-	
-	\begin{center}
-		\begin{tikzpicture}
+\textbf{Aufgabe:}
+
+Gegeben ist $f(x)=x^2-2x$.
+
+\begin{enumerate}
+\item[(i)] Bestimme möglichst große Intervalle,
+auf denen $f$ injektiv und somit bei geeigneter
+Zielmenge umkehrbar ist.
+\item[(ii)] Bestimme die Umkehrfunktion für
+die Einschränkung auf $]-\infty,1]$.
+\end{enumerate}
+
+\textbf{Lösung zu (i):}
+
+Durch quadratische Ergänzung ergibt sich:
+\[
+f(x)=x^2-2x=(x-1)^2-1.
+\]
+Die Parabel hat ihren Scheitelpunkt bei $(1,-1)$
+und die Nullstellen $x=0$ und $x=2$.
+
+\begin{center}
+\begin{tikzpicture}
 			
 			% Gitternetzlinien
 			\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
@@ -146,53 +186,85 @@ zu (i):
 			\draw[thick,color=blue] plot[samples=200, domain=1:3.2] 
 			(\x,{\x*\x-2*\x});
 			
-		\end{tikzpicture}\\
-	\end{center}
-	Offensichtlich ist $f:[1,\infty[\longmapsto [-1,\infty[$ in diesen Bereich bijektiv und ebenfalls ist $f:]-\infty,1]\longmapsto  [-1,\infty[$ bijektiv.\\
-	Mengenmäßig ist die Menge; $]-\infty,1]$ größer als die Menge: $[1,\infty[$.
-	Also ist $\mathbb{D}_f$ maximal mit:\\
-	\begin{align*}
-		f:]-\infty,1]\longmapsto  [-1,\infty[ \text{ mit }x\longmapsto x^2-2x\\
-	\end{align*}
-\end{quote}
+		\end{tikzpicture}
+\end{center}
+
+Auf $]-\infty,1]$ ist die Funktion streng fallend,
+auf $[1,\infty[$ streng steigend. Daher ist sie
+auf jedem dieser beiden Intervalle injektiv.
+
+Wählt man jeweils $[-1,\infty[$ als Zielmenge,
+erhält man zwei bijektive Einschränkungen:
+\begin{align*}
+f_- &: ]-\infty,1]\rightarrow[-1,\infty[,
+&x&\mapsto x^2-2x,\\
+f_+ &: [1,\infty[\rightarrow[-1,\infty[,
+&x&\mapsto x^2-2x.
+\end{align*}
+
+Beide Intervalle sind bezüglich der Injektivität
+maximal durch Mengeninklusion.
+Keines der beiden ist eine Obermenge des anderen.
+Für Teil (ii) wählen wir den linken Ast $f_-$.
+
 \subsection{Aufgabe zur Umkehrabbildung Teil II}
 
-zu (ii):
-\begin{quote}
-	Berechne $f^{-1}(x)$ mit der Funktion: $f:\;]-\infty,1]\longmapsto  [-1,\infty[ \text{ mit }x\longmapsto x^2-2x$\\
-	Betrachte:\\
-	$f(x)=y\Leftrightarrow x^2-2x=y\Leftrightarrow x^2-2x-y=0$\\
-	Wie stellen die Gleichung auf $x$ um.\\
-	\begin{align*}
-		x^2-2x-y&=0\\
-		x^2-2x+1-1&=y\\
-		(x-1)^2&=1+y\\
-		x-1&=\pm \sqrt{1+y}\\
-		x_{1,2}&=1\pm \sqrt{1+y}\\
-	\end{align*}
-	Da der $\mathbb{D}_f=]-\infty,1]$ ist, muß die Wurzel negativ sein und die positive Wurzel spielt dadurch keine Rolle mehr.\\
-	Also heißt die Umkehrfunktion $f^{-1}(y)=1-\sqrt{1+y}$\\
-	Ob $f(x)$ oder $f(y)$ ist egal, kann man auch z nennen!\vspace*{2mm}\\
-	Probe:\\
-	es muß gelten für $f=x^2-2x$ und $f^{-1}=1-\sqrt{1+y}$:
-	\begin{quote}
-		$\bullet  \;\;f\circ f^{-1}$\\
-		$\bullet \;\;f^{-1}\circ f$\\
-		\begin{align*}
-			f\circ f^{-1}(y)=f(1-\sqrt{1+y})&=(1-(\sqrt{1+y}))^2-2(1-\sqrt{1+y})\\
-			&=1-2\sqrt{1+y}+1+y-2+2\sqrt{1+y}\\
-			f\circ f^{-1}(y) &=y\\
-			&\\
-			f^{-1}(x)\circ f=f^{-1}(x^2-2x)&=1-\sqrt{x^2-2x-1}\\
-			&=1-\sqrt{(1-x)}^2\\
-			f^{-1}(x)\circ f&=1-(1-x)=x
-		\end{align*}
-		
-		
-	\end{quote}
-	
-\end{quote}
-Die Umkehrfunktion lautet:\\
+\textbf{Lösung zu (ii):}
+
+Gesucht ist die Umkehrfunktion von
+\[
+f_-:]-\infty,1]\rightarrow[-1,\infty[,
+\qquad f_-(x)=x^2-2x.
+\]
+
+Wir setzen $y=f_-(x)$ und lösen nach $x$ auf:
 \begin{align*}
-	f^{-1}:[-1,\infty[\longmapsto ]-\infty,1] \text{ mit }x\longmapsto 1-\sqrt{1+x}
+y &= x^2-2x,\\
+y+1 &= x^2-2x+1=(x-1)^2,\\
+x-1 &= \pm\sqrt{y+1},\\
+x &= 1\pm\sqrt{y+1}.
 \end{align*}
+
+Auf dem gewählten Definitionsbereich gilt $x\leq 1$.
+Daher ist der Minuszweig auszuwählen:
+\[
+\boxed{f_-^{-1}(y)=1-\sqrt{y+1},\qquad y\geq-1.}
+\]
+
+\textbf{Probe:}
+
+Für $y\in[-1,\infty[$ folgt:
+\begin{align*}
+(f_-\circ f_-^{-1})(y)
+ &=\bigl(1-\sqrt{y+1}\bigr)^2
+   -2\bigl(1-\sqrt{y+1}\bigr)\\
+ &=1-2\sqrt{y+1}+(y+1)-2+2\sqrt{y+1}\\
+ &=y.
+\end{align*}
+
+Für $x\in]-\infty,1]$ gilt:
+\begin{align*}
+(f_-^{-1}\circ f_-)(x)
+ &=1-\sqrt{x^2-2x+1}\\
+ &=1-\sqrt{(x-1)^2}\\
+ &=1-|x-1|\\
+ &=1-(1-x)=x.
+\end{align*}
+Der letzte Schritt verwendet $x\leq 1$ und damit
+$|x-1|=1-x$.
+
+\textbf{Ergebnis:}
+\[
+\boxed{
+f_-^{-1}:[-1,\infty[\rightarrow]-\infty,1],
+\qquad y\mapsto1-\sqrt{y+1}.
+}
+\]
+
+\textbf{Ergänzung:}
+Für die ebenfalls maximal injektive Einschränkung
+$f_+$ auf $[1,\infty[$ lautet die Umkehrfunktion
+\[
+f_+^{-1}(y)=1+\sqrt{y+1},
+\qquad y\in[-1,\infty[.
+\]

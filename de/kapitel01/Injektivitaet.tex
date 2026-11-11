@@ -3,20 +3,28 @@
 
 \subsection{Injektivität von Abbildungen}
 
-\textbf{Definition (injektiv):}\\
-Eine Abb. $f:\mathbb{D}_f\longmapsto\mathbb{W}_f$ heißt injektiv, wenn $f(x_1)=f(x_2)$ nur für $x_1=x_2$ gilt.\\
-Beispiel:\\
-$f_2:\mathbb{R}\longmapsto[0,\infty[$ mit $x\longmapsto x^2$\\
-\textbullet \;\;Zeige, dass $f_2$ nicht injektiv ist.\\
+\textbf{Definition (injektiv):}
+
+Eine Abbildung $f:\mathbb{D}_f\longrightarrow\mathbb{W}_f$
+heißt injektiv, wenn aus $f(x_1)=f(x_2)$ stets
+$x_1=x_2$ folgt. Mathematisch gilt:
+\[
+\forall x_1,x_2\in\mathbb{D}_f:\quad
+f(x_1)=f(x_2)\ \Longrightarrow\ x_1=x_2.
+\]
+
+\textbf{Beispiel:} $f_2:\mathbb{R}\longrightarrow[0,\infty[$,
+$f_2(x)=x^2$.
+
+Zeige, dass $f_2$ nicht injektiv ist.
 \begin{quote}
-	$f_2:\mathbb{R}\longmapsto [0,\infty[$ mit $x\longmapsto x^2$\\
-	$ f_2(-1)=(-1)^2=1$\\
-	$f_2(1)=(1)^2=1$\\
-	es muß gelten:\\
-	$f_2(x_1)=f(x_2)$ nur für $x_1=x_2$\\
-	Widerspruchsbeweis:\\
-	Für $x_1=-1$ gilt $f(x_1)=1$ und für $x_2=1$ gilt $f_2(x_2)=1\Rightarrow x_1\neq x_2\wedge f(x_1)=f(x_2).\\\text{Widerspruch zur Definition} \Rightarrow f_2(x) \text{ ist nicht injektiv.}_{\Square} $ \\ 
-	
+Für die verschiedenen Argumente $x_1=-1$ und $x_2=1$ gilt
+\[
+f_2(-1)=(-1)^2=1=(1)^2=f_2(1).
+\]
+Also gilt $x_1\neq x_2$, obwohl $f_2(x_1)=f_2(x_2)$.
+Damit ist die Injektivitätsbedingung verletzt;
+$f_2$ ist nicht injektiv.
 \end{quote}
 
 \begin{center}
@@ -54,7 +62,7 @@ $f_2:\mathbb{R}\longmapsto[0,\infty[$ mit $x\longmapsto x^2$\\
 \end{center}
 \newpage
 \noindent
-\textbullet \;\; $f_{2_{|[0,\infty[}}$  ist injektiv .\\
+\textbullet \;\; Die Einschränkung $f_2|_{[0,\infty[}$ ist injektiv, da $x^2$ auf $[0,\infty[$ streng monoton wächst.
 \begin{center}
 	\begin{tikzpicture}
 		
@@ -80,7 +88,7 @@ $f_2:\mathbb{R}\longmapsto[0,\infty[$ mit $x\longmapsto x^2$\\
 		
 		
 		\draw[thick,color=black] plot[samples=200, domain=0:2] 
-		(\x,{\x*\x}) node[below, xshift=2em]{$f_{2_{|[0,\infty[}}(x)$};
+		(\x,{\x*\x}) node[below, xshift=2em]{$f_2|_{[0,\infty[}(x)$};
 		
 		
 		
@@ -89,10 +97,9 @@ $f_2:\mathbb{R}\longmapsto[0,\infty[$ mit $x\longmapsto x^2$\\
 \begin{quote}
 	Merke: Die Injektivität hängt stark vom $ \mathbb{D}_f$ ab.
 \end{quote}
-\newpage
-\noindent
 
-Beispiel: $f(x)=2$\\
+
+Beispiel: $f:\mathbb{R}\rightarrow\mathbb{R}$ mit $f(x)=2$.
 \begin{center}
 	\begin{tikzpicture}
 		
@@ -124,7 +131,7 @@ Beispiel: $f(x)=2$\\
 		
 	\end{tikzpicture}\\
 \end{center}
-Diese Funktion ist nicht injektiv. Jedem Wert der $ x$-Achse wird ein Wert an der $y$-Achse zugewiesen.\vspace*{2mm}
+Diese Funktion ist nicht injektiv: Beispielsweise gilt $f(0)=f(1)=2$ bei $0\neq 1$.\vspace*{2mm}
 \\
 Beispiel: $f(x)=3\sin(x)+1$\\
 \begin{center}
@@ -161,7 +168,7 @@ Beispiel: $f(x)=3\sin(x)+1$\\
 		
 	\end{tikzpicture}\\
 \end{center}
-Die Funktion $f(x)$ ist nicht injektiv. Durch Einschränkung der  Funktion $f(x)$ kann ein Teil injektiv werden. Die Funktion $f_{|[-4,-3]}(x)$ und $f_{|[-1,1]}(x)$ sind injektiv.\\
+Die Funktion $f:\mathbb{R}\rightarrow\mathbb{R}$ mit $f(x)=3\sin(x)+1$ ist nicht injektiv, da sie periodisch ist. Auf den Intervallen $[-4,-3]$ und $[-1,1]$ ist sie dagegen jeweils streng monoton und daher injektiv.
 \subsection{Surjektivität und Bijektivität von Abbildungen}
 
 \textbf{Definition (surjektiv):}\\
@@ -189,13 +196,13 @@ Beispiel:\\
 	Für $y=-1$ existiert kein $x$ mit $x^2=y=-1$\\
 	$f_2$ ist nicht surjektiv.\vspace*{2mm}\\
 \end{quote}
-\pagebreak
-\textbullet$\;\;\widetilde{f_2}: \mathbb{R}\longmapsto [0,\infty,[$ mit $x\longmapsto x^2$\\
+
+\textbullet$\;\;\widetilde{f}_2: \mathbb{R}\longmapsto [0,\infty[$ mit $x\longmapsto x^2$\\
 \begin{quote}
-	Man sucht sich einen beliebigen Wert aus der Bildmenge ($ y=.. $) und zeige, dass gilt: $ \widetilde{f_2}(x)=y $. Da $ y=x^2 $ wählt man $ x=\sqrt{y} $ und setzt dies in $ \widetilde{f_2}(x) $ ein.
+	Zum Nachweis der Surjektivität betrachten wir ein beliebiges Element $y$ der Zielmenge und suchen ein $x$ mit $\widetilde{f}_2(x)=y$.
 	
-	Sei $y\in [0,\infty,[$ und wähle $ x=\sqrt{y} $\\
-	$\widetilde{f_2}(x)=\widetilde{f_2}(\sqrt{y})=(\sqrt{y})^2=y \mapsto$ surjektiv\\
+	Sei $y\in [0,\infty[$ und wähle $ x=\sqrt{y} $\\
+	$\widetilde{f}_2(\sqrt{y})=(\sqrt{y})^2=y$. Somit ist $\widetilde{f}_2$ surjektiv.
 	
 \end{quote}
 
@@ -240,61 +247,98 @@ Beispiel:\\
 	Für jedes $\textcolor{blue}{y\in\mathbb{W}_{\widetilde{f}_2}}$ existiert ein $x\in\mathbb{D}_{\widetilde{f}_2}$, deswegen ist die Funktion surjektiv.\\	
 \end{quote}
 Merke: Surjektivität hängt stark vom $\mathbb{W}_f$ ab.\vspace*{4mm}\\
-\textbf{Definition (bijektiv):}\\
-Eine Funktion $f:\mathbb{D}_f\longmapsto\mathbb{W}_f$ heißt bijektiv, wenn sie injektiv und surjektiv zugleich ist!\vspace*{2mm}\\
-Merke:\\
-Es gibt Funktionen, die weder injektiv noch surjektiv sind.\\
-Beispiel: $f_2:\mathbb{R}\longmapsto\mathbb{R}$ mit $x\longmapsto x^2$ ist weder injektiv noch surjektiv.\\
+\subsection{Bijektivität von Abbildungen}
+
+\textbf{Definition (bijektiv):}
+
+Eine Abbildung $f:\mathbb{D}_f\longrightarrow\mathbb{W}_f$
+heißt bijektiv, wenn sie sowohl injektiv als auch
+surjektiv ist. Das bedeutet: Jedem Element der
+Zielmenge wird genau ein Element des Definitionsbereichs
+zugeordnet.
+
+Mathematisch gilt:
+\[
+\forall y\in\mathbb{W}_f\;\exists!\,x\in\mathbb{D}_f:
+\quad f(x)=y.
+\]
+Dabei bedeutet $\exists!$: Es existiert genau ein solches $x$.
+
+\textbf{Beispiel 1: Quadratische Funktion.}
+
+Die Funktion $f:\mathbb{R}\rightarrow\mathbb{R}$ mit
+$f(x)=x^2$ ist weder injektiv noch surjektiv.
+Schränkt man den Definitionsbereich auf $[0,\infty[$ ein
+und wählt dieselbe Menge als Zielmenge, so erhält man
+\[
+\widetilde f:[0,\infty[\;\longrightarrow[0,\infty[,
+\qquad x\longmapsto x^2.
+\]
+Diese Abbildung ist injektiv, denn für
+$0\le x_1<x_2$ gilt $x_1^2<x_2^2$.
+Sie ist auch surjektiv: Für jedes $y\ge0$ erfüllt
+$x=\sqrt{y}$ die Gleichung $\widetilde f(x)=y$.
+Folglich ist $\widetilde f$ bijektiv.
+
+\textbf{Beispiel 2: Kubische Funktion.}
+
+Die Abbildung
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\qquad f(x)=(x-4)^3
+\]
+ist ebenfalls bijektiv: Sie ist streng monoton wachsend
+und damit injektiv. Für jedes $y\in\mathbb{R}$ existiert
+mit $x=4+\sqrt[3]{y}$ ein Urbild, also ist sie auch surjektiv.
+Der ausführliche Nachweis folgt in den nächsten beiden Aufgaben.
+
+\textbf{Bemerkung:}
+
+Eine Abbildung ist genau dann bijektiv, wenn sie eine
+Umkehrabbildung von ihrer Zielmenge in ihren Definitionsbereich
+besitzt.
+
 \subsection{Aufgaben zur Injektivität und Surjektivität Teil I}
 
-Überprüfe die folgende Funktion auf Injektivität und Surjektivität:
+\textbf{Aufgabe:} Überprüfe die Abbildung
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},\qquad f(x)=(x-4)^3
+\]
+auf Injektivität und Surjektivität.
+
+\textbf{Nachweis der Injektivität:}
+
+Seien $x_1,x_2\in\mathbb{R}$ mit $f(x_1)=f(x_2)$.
+Dann folgt
 \begin{align*}
-	f:\mathbb{R}\longmapsto\mathbb{R} \text{ mit } f(x)=(x-4)^3
+(x_1-4)^3&=(x_2-4)^3\\
+x_1-4&=x_2-4\\
+x_1&=x_2.
 \end{align*}
-\textbf{Zur Injektivität}\\
-Falls man weis, dass die Funktion nicht injektiv ist kann man ein Gegenbeispiel konstruieren.\\
-Beweis der Injektivität:\\
-Betrachte:\\ $f(x_1)=f(x_2)\Leftrightarrow (x_1-4)^3=(x_2-4)^3$\\
-z.z: $x_1=x_2$\\
-\underline{1.Fall:} $(x_1-4)\neq 0$\\
-dann erhalten wir:\\
-\begin{align*}
-	\bigg(\frac{(x_2-4)}{(x_1-4)}\bigg)^3=1\Leftrightarrow\frac{(x_2-4)}{(x_1-4)}=1\Leftrightarrow x_2-4=x_1-4 \Leftrightarrow x_2=x_1
-\end{align*} 
-\underline{2.Fall:}$(x_1-4)=0\Leftrightarrow x_1=4$
-\begin{align*}
-	0=(x_1-4)^3=(x_2-4)^3=0\Leftrightarrow x_2=4\Leftrightarrow x_1=x_2
-\end{align*}
-\begin{align*}
-	\text{also }x_1=x_{2_{\Square}}\text{    d.h. f ist injektiv}
-\end{align*}
+Dabei verwenden wir, dass die Kubikfunktion auf
+$\mathbb{R}$ streng monoton wächst und daher
+auf beiden Seiten die reelle Kubikwurzel gezogen
+werden darf. Somit ist $f$ injektiv.
+
 \subsection{Aufgaben zur Injektivität und Surjektivität Teil II}
 
-\textbf{Zur Surjektivität}\\
-Falls man weis, dass die Funktion nicht surjektiv ist kann man ein Gegenbeispiel konstruieren.\vspace*{2mm}\\
-Beweis der Surjektivität:\\
-Betrachte:\\ $f:\mathbb{R}\longmapsto\mathbb{R} \text{ mit } f(x)=(x-4)^3$\\
-Sei $y\in\mathbb{R}$ beliebig. Es existiert ein $x\in\mathbb{R}$ mit $f(x)$ also mit $(x-4)^3=y$\vspace*{2mm}\\
-Die Gleichung auf $x$ auflösen:\\
-(Fallunterscheidung wegen negativer Wurzel)\\
-\underline{1.Fall:} $y\in [0,\infty[$\\
-\begin{quote}
-	Betrachte:\\	
-	$(x-4)^3=y\Leftrightarrow (x-4)=\sqrt[3]{y}\Leftrightarrow x=\sqrt[3]{y}+4\\$
-\end{quote}
-\begin{quote}
-	Probe:\\
-	$ f(x)=f(\sqrt[3]{y}+4)=((\sqrt[3]{y}+4)-4)^3=y$
-\end{quote}
-\underline{2.Fall:} $y\in \;]-\infty,0[$
-\begin{quote}
-	Betrachte:\\
-	$(x-4)^3=y\Leftrightarrow-(-x+4)^3=y$\\
-	Substituiere $y=-\widetilde{y}$\\
-	$\Leftrightarrow-(-x+4)^3=-\widetilde{y}\Leftrightarrow(-x+4)^3=\widetilde{y}\Leftrightarrow -x+4=\sqrt[3]{\widetilde{y}}\Leftrightarrow x=-\sqrt[3]{\widetilde{y}}+4$
-\end{quote}
-\begin{quote}
-	Probe:\\
-	$f(x)=f(-\sqrt[3]{\widetilde{y}}+4)=((-\sqrt[3]{\widetilde{y}}+4)-4)^3=\big(-\sqrt[3]{\widetilde{y}\widetilde{y}}\big)^3=-\widetilde{y}=y_{_{\Square}}$
-\end{quote}
-Daraus folgt die Funktion ist surjektiv, und da die Funktion auch injektiv ist, ist die Funktion bijektiv.\\
+\textbf{Nachweis der Surjektivität:}
+
+Sei $y\in\mathbb{R}$ beliebig. Gesucht ist ein
+$x\in\mathbb{R}$ mit $(x-4)^3=y$.
+Da die reelle Kubikwurzel auch für negative Zahlen
+definiert ist, erhalten wir ohne Fallunterscheidung
+\[
+x=4+\sqrt[3]{y}.
+\]
+Dieser Wert liegt in $\mathbb{R}$. Die Probe ergibt
+\begin{align*}
+f\bigl(4+\sqrt[3]{y}\bigr)
+&=\bigl(4+\sqrt[3]{y}-4\bigr)^3\\
+&=\bigl(\sqrt[3]{y}\bigr)^3=y.
+\end{align*}
+Damit wird jedes Element der Zielmenge $\mathbb{R}$
+erreicht. Also ist $f$ surjektiv.
+
+Da die Abbildung sowohl injektiv als auch surjektiv
+ist, ist sie bijektiv.

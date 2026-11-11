@@ -1,0 +1,98 @@
+%2.2
+\section{Vollständige Induktion}
+
+Die vollständige Induktion ist eine Beweismethode um Aussagen zu beweisen.\\
+Beweise folgende Aussage: Für alle $ n\in\mathbb{N} $ gilt $ \sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2} $.\\
+Anleitung:\\
+\textbf{(I.A.) Induktionsanfang}\\
+Beweise die Aussage für erstes n:\\
+$ n=0:\sum\limits_{k=1}^{0}k=0=\frac{0(0+1)}{2}_{\Square} $\\
+(Obere Grenze der Summe ist größer als die untere Grenze, deshalb ist die Summe=0)\\
+\textbf{(I.V.) Induktionsvoraussetzung}\\
+für ein $ n\in \mathbb{N} $ gilt:\\
+\begin{align}
+	\sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2}
+\end{align}
+\textbf{(I.S.) Induktionsschritt}\\
+Zu zeigen: Dass die Aussage auch für $ n+1 $ gilt. Unter der Annahme , dass (I.V.) gilt beweise wir die Aussage:\\
+\begin{align}
+	\sum\limits_{k=1}^{n+1}k=\frac{(n+1)((n+1)+1)}{2}=\frac{n^2+2n+n+2}{2}
+\end{align}
+Betrachte:\\
+\begin{align}
+	\sum\limits_{k=1}^{n+1}k=\sum\limits_{k=1}^{n}k+(n+1)&\overset{(I.V.)}{=}\underbrace{\frac{n(n+1)}{2}}_{\text{(II.1)}}+(n+1)\nonumber\\
+	&\;\;=\frac{n(n+1)+2(n+1)}{2}\nonumber\\
+	&\;\;=\frac{n^2+2n+n+2}{2}\nonumber\\
+	\sum\limits_{k=1}^{n+1}k&\;\;=\frac{n^2+2n+n+2}{2}_{\Square}
+\end{align}
+Man hat gezeigt:\\
+Die Aussage (II.2) ist gleich der Betrachtung (II.3) mit Aussnutzung der Induktionsvoraussetzung (II.1).
+\subsection{Vollständige Induktion Aufgabe 1}
+
+Beweise: Für $ n\in\mathbb{N} $ gilt $ \sum\limits_{i=1}^{n}(2i-1)=n^2 $\\
+\textbf{(I.A.)}\\
+$ n=0:\sum\limits_{i=1}^{0}(2i-1)=0=0^2_{\;\Square} $\\
+\textbf{(I.V.)}\\
+Für ein $ n\in\mathbb{N} $ gilt $\sum\limits_{i=1}^{n}(2i-1)=n^2  $\\
+\textbf{(I.S.)}\\
+Z.z.: $ \sum\limits_{i=1}^{n+1}(2i-1) =(n+1)^2=n^2+2n+1$\\
+Dies muß man jetzt beweisen:\\
+Betrachte:\\
+\begin{align*}
+	\sum\limits_{i=1}^{n+1}(2i-1)=\underbrace {\sum\limits_{i=1}^{n}(2i-1)}_{I.V.}+(2(n+1)-1)\overset{(I.V.)}{=}n^2+(2(n+1)-1)=n^2+2n+1_{\;\Square}
+\end{align*}
+\subsection{Vollständige Induktion Aufgabe 2}
+
+Beweise: Für alle $ n\in \mathbb{N}$ mit $ n \geq 2 $ gilt:$ \prod\limits_{k=2}^{n}\big(1-\frac{1}{k}\big)=\frac{1}{n} $\\
+$ \scriptscriptstyle (k=2 \text{ und } n\geq2 \text{ : Die Zahl 2 ist Zufall!}) $\vspace*{2mm}\\
+\textbf{(I.A.)}\\
+$ n=2:\prod\limits_{k=2}^{2}\big(1-\frac{1}{2}\big)=\frac{1}{2}_{\;\;\Square} $\\
+\textbf{(I.V.)}\\
+Es gilt für ein $ n\in \mathbb{N} $ mit $ n\geq 2 $\\
+\begin{align*}
+	\prod\limits_{k=2}^{n}\bigg(1-\frac{1}{k}\bigg)=\frac{1}{n}
+\end{align*}
+\textbf{(I.S.)}\\
+z.Z: $ \prod\limits_{k=2}^{n+1}\big(1-\frac{1}{k}\big)=\frac{1}{n+1} $\\
+\newpage
+\noindent
+Betrachte:\\
+\begin{align*}
+	\prod\limits_{k=2}^{n+1}\bigg(1-\frac{1}{k}\bigg)=\underbrace {\prod\limits_{k=2}^{n}\bigg(1-\frac{1}{k}\bigg)}_{(I.V.)}\cdot\bigg(1-\frac{1}{n+1}\bigg) & \overset{(I.V.)}{=}\frac{1}{n}\bigg(1-\frac{1}{n+1}\bigg)\\
+	&\;\;=\frac{1}{n} \bigg(\frac{(n+1)-1}{n+1}\bigg)\\
+	&\;\;=\frac{1}{n}\bigg(\frac{n}{n+1}\bigg)\\
+	\prod\limits_{k=2}^{n+1}\bigg(1-\frac{1}{k}\bigg)&\;\;=\frac{1}{n+1}_{\;\;\Square}\\
+\end{align*}
+\subsection{Vollständige Induktion Aufgabe 3}
+
+Beweise: Für $ n\geq 1 $ gilt $ \sum\limits_{k=1}^{n} (-1)^k\cdot k^2=(-1)^n \frac{n(n+1)}{2}$\vspace*{2mm}\\
+\textbf{I.A.}\\
+Für $n=1$ gilt:
+\begin{align*}
+	\sum\limits_{k=1}^{1}(-1)^1\cdot 1^2=-1=(-1)^1\cdot\frac{1(1+1)}{2}_{\;\;\Square}\\
+\end{align*}
+\textbf{I.V.}\\
+Es gilt für ein $ n\in \mathbb{N} $ mit $ n\geq 1 $\\
+\begin{align}
+	\sum\limits_{k=1}^{n} (-1)^k\cdot k^2=(-1)^n \frac{n(n+1)}{2}
+\end{align}
+\textbf{I.S.}\\
+Zu zeigen:\\
+\begin{align*}
+	\sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2=(-1)^{n+1}\cdot \frac{(n+1)((n+1)+1)}{2}=(-1)^{n+1}\cdot \frac{(n+1)(n+2)}{2}=(-1)^{n+1}\cdot\frac{n^2+3n+2}{2}
+\end{align*}
+\newpage
+\noindent
+Betrachte:\\
+\begin{align*}
+	\sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2&=\underbrace {\sum\limits_{k=1}^{n} (-1)^k\cdot k^2}_{\text{(II.4) }}+ (-1)^{n+1}\cdot(n+1)^2\\
+	&\overset{(I.V.)}{=}\underbrace {(-1)^n\cdot \frac{n(n+1)}{2}}_{\text{(II.4) }}+(-1)^{n+1} \cdot(n+1)^2\\
+	&\;\;=\frac{(-1)^n n(n+1)+2(-1)^{n+1}(n+1)^2 }{2}\\
+	&\;\;=\frac{(-1)^n (n^2+n)+2(-1)^{n+1}(n+1)^2 }{2}& |(-1)\cdot(-1) \text{ ergänzen }\\
+	&\;\;=\frac{(-1)^n\cdot(-1)\cdot(-1) (n^2+n)+2(-1)^{n+1}(n+1)^2}{2}\\
+	&\;\;=\frac{(-1)^{n+1}(-n^2-n)+2(-1)^{n+1}(n+1)^2}{2}\\
+	&\;\;=(-1)^{n+1}\cdot\frac{(-n^2-n)+2(n+1)^2}{2}\\
+	&\;\;=(-1)^{n+1}\cdot\frac{-n^2-n+2n^2+4n+2}{2}\\
+	\sum\limits_{k=1}^{n+1}(-1)^k\cdot k^2&\;\;=(-1)^{n+1}\cdot\frac{n^2+3n+2}{2}_{\;\;\Square}\\
+\end{align*}
+
